@@ -20,6 +20,7 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
+<<<<<<< HEAD
     <servlet-name>ShangPinLeiServlet</servlet-name>
     <servlet-class>com.sevrlet.ShangPinLeiServlet</servlet-class>
   </servlet>
@@ -30,6 +31,11 @@
     <servlet-class>com.sevrlet.CanShuoServlet</servlet-class>
   </servlet>
 
+=======
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.sevrlet.UserServlet</servlet-class>
+  </servlet>
+>>>>>>> c6e3c97de237bc6fbc7681813a1e42d5769fe8ab
 
 
 
@@ -42,12 +48,17 @@
     <url-pattern>/ShangPin</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+<<<<<<< HEAD
     <servlet-name>ShangPinLeiServlet</servlet-name>
     <url-pattern>/ShangPinLei</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CanShuoServlet</servlet-name>
     <url-pattern>/CanShuo</url-pattern>
+=======
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/User</url-pattern>
+>>>>>>> c6e3c97de237bc6fbc7681813a1e42d5769fe8ab
   </servlet-mapping>	
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
