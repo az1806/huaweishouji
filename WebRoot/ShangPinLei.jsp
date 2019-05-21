@@ -1,10 +1,11 @@
-<%@ page language="java" import="java.util.*,com.entitly.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,com.entitly.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+OCTYPE html>
 <html lang="zh-cn">
 <head>
     <title>某某家具设计公司企业官网-模板之家</title>
@@ -92,79 +93,109 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </li>
             <li>
                 <a>产品分类</a>
-                <ul id="pro-category">
-                   <%
-                   List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");
-                  for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
-					href="/huaweishouji/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
-						<%} %> 
-						</a>
-				</li>
-                  
+                 <ul id="pro-category">
+                    <li class="on"><a href="#">手机系列</a></li>
+                    <li><a href="#">电脑系列</a></li>
+                    <li><a href="#">平板系列</a></li>
+                    <li><a href="#">创意系列</a></li>
                 </ul>
             </li>
         </ul>
     </aside>
 
     <aside class="pro-rightsidebar">
-    
         <header>
-
-                    <p></p>
+            <p></p>
             <span>手机系列</span>
+            <div class="product-nav"><a href="index.html">首页 </a>&#62;<a href="#">产品展示</a>&#62;<a>XX椅子</a></div>
         </header>
-         <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");%>
-        <ul> 
-            <li >
-            
-                <a href="/huaweishouji/CanShuo">
-                <div class="img-box">
-                    <img src=<%=ps.get(0).getSrc() %>>
-                    <p><%=ps.get(0).getSname() %></p>
+        
+        <main>
+        <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");%>
+            <div class="pro-right-left">
+                <div class="pro-details-img"><img src="images/proimg.jpg"></div>
+				
+                <div class="pro-detalis-carousel">
+                    <div class="am-slider am-slider-default am-slider-carousel" data-am-flexslider="{itemWidth: 112, itemMargin: 4,move:5,  controlNav: false ,  slideshow: true}">
+                        <ul class="am-slides pro-details">
+                            <li><img src="images/mate20pro.jpg" /></li>
+                            <li><img src="images/team1.png" /></li>
+                            <li><img src="images/team2.png" /></li>
+                            <li><img src="images/team3.png" /></li>
+                            <li><img src="images/team4.png" /></li>
+                            <li><img src="images/mate20pro.jpg" /></li>
+                            <li><img src="images/mate20pro.jpg" /></li>
+                        </ul>
+                    </div>
                 </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="/huaweishouji/CanShuo">
-                    <div class="img-box">
-                        <img src="<%=ps.get(1).getSrc() %>">
-                        <p><%= ps.get(1).getSname()%></p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="/huaweishouji/CanShuo">
-                    <div class="img-box">
-                        <img src="<%=ps.get(2).getSrc() %>">
-                        <p><%= ps.get(2).getSname()%></p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="/huaweishouji/CanShuo">
-                    <div class="img-box">
-                        <img src="<%=ps.get(3).getSrc() %>">
-                        <p><%= ps.get(3).getSname()%></p>
-                    </div>
-                </a>
-            </li>
-
+				
+            </div>
+            <div class="pro-right-right">
             
-        </ul>
-		
-        <div class="pro_list_more_pages">
-            <ul>
-                <li><a>上一页</a></li>
-                <li class="pro-list-current"><a>1</a></li>
-                <li><a>2</a></li>
-                <li><a>3</a></li>
-                <li><a>下一页</a></li>
-            </ul>
-        </div>
-		
+                <ul class="pro-right-info-constant">
+                    <li>产品名称:</li>
+                    <li>产品颜色:</li>
+                    <li>产品售价:</li>
+                    <li>市场价:</li>
+                </ul>
+                <ul class="pro-right-info-variable">
+                    <li> <%=ps.get(0).getSname() %> </li>
+                    <li> <%=ps.get(0).getColor()%> </li>
+                    <li> <%=ps.get(0).getJiage()%> </li>
+                    <li> <%=ps.get(0).getJiage()%> </li>
+                </ul>
+            </div>
+
+            <div class="am-tabs pro-tabs" data-am-tabs>
+                <ul class="am-tabs-nav am-nav am-nav-tabs">
+                    <li class="am-active"><a href="#tab1">详细说明1</a></li>
+                    <li><a href="#tab2">详细说明2</a></li>
+                    <li><a href="#tab3">详细说明3</a></li>
+                    <li><a href="#tab4">详细说明4</a></li>
+                </ul>
+
+                <div class="am-tabs-bd">
+                    <div class="am-tab-panel am-active" id="tab1">
+                        <ul>
+                            <li>
+                                <span class="pro-tabs-constant">品牌:</span>
+                                <span class="pro-tabs-variable">XXX</span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">是否组装:</span>
+                                <span class="pro-tabs-variable">NO</span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">是否可定制:</span>
+                                <span class="pro-tabs-variable">yes</span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">型号:</span>
+                                <span class="pro-tabs-variable">000000</span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">颜色分类:</span>
+                                <span class="pro-tabs-variable">卡其</span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">设计元素:</span>
+                                <span class="pro-tabs-variable">大师设计</span>
+                            </li> <li>
+                            <span class="pro-tabs-constant">风格:</span>
+                            <span class="pro-tabs-variable">日式</span>
+                        </li>
+                            <li>
+                                <span class="pro-tabs-constant">款式定位:</span>
+                                <span class="pro-tabs-variable">现代</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="am-tab-panel" id="tab2">2</div>
+                    <div class="am-tab-panel" id="tab3">3</div>
+                    <div class="am-tab-panel" id="tab4">4</div>
+                </div>
+            </div>
+        </main>
     </aside>
 
 
@@ -201,5 +232,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="footer-bottom"><div style="text-align:center;color:#fff;line-height:100px;"><span><a href="http://www.haothemes.com/" target="_blank" title="好主题">好主题</a>提供 - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span></div></div>
     </div>
 </footer>
+
 </body>
+
 </html>

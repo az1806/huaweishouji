@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.ShangPinDao;
-import com.daolmpl.ShangPinDaoimpl;
-import com.entitly.ShangPin;
+import com.dao.ShangPInLeiDao;
+import com.daolmpl.ShangPInLeiDaoimpl;
+import com.entitly.ShangPinLei;
 
-public class ShangPinServlet extends HttpServlet {
+public class CanShuoServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -27,15 +27,13 @@ public class ShangPinServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getParameter("n");
-		
-			ShangPinDao ptd = new ShangPinDaoimpl();
-			List<ShangPin> pts= ptd.queryShangPins();
-			request.setAttribute("spname", pts);
 
-			request.getRequestDispatcher("/ShangPinLei").forward(request, response);
-		}
-	
+		ShangPInLeiDao po = new ShangPInLeiDaoimpl();
+		List<ShangPinLei> ps= po.queryShangPinLeis();
+		request.setAttribute("svname", ps);
+
+		request.getRequestDispatcher("/ShangPinLei.jsp").forward(request, response);
+	}
 
 	/**
 	 * The doPost method of the servlet. <br>
@@ -50,7 +48,19 @@ public class ShangPinServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		out.print("    This is ");
+		out.print(this.getClass());
+		out.println(", using the POST method");
+		out.println("  </BODY>");
+		out.println("</HTML>");
+		out.flush();
+		out.close();
+	}
 
 }
-	}

@@ -1,20 +1,20 @@
 package com.entitly;
 
 public class ShangPin {
-	private int id;
+	private int xid;
 	private String name;
 	public ShangPin() {
 	}
-	public ShangPin(int id, String name) {
+	public ShangPin(int xid, String name) {
 
-		this.id = id;
+		this.xid = xid;
 		this.name = name;
 	}
-	public int getId() {
-		return id;
+	public int getXid() {
+		return xid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setXid(int xid) {
+		this.xid = xid;
 	}
 	public String getName() {
 		return name;
