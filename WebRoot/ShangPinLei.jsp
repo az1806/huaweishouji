@@ -94,10 +94,14 @@ OCTYPE html>
             <li>
                 <a>产品分类</a>
                  <ul id="pro-category">
-                    <li class="on"><a href="#">手机系列</a></li>
-                    <li><a href="#">电脑系列</a></li>
-                    <li><a href="#">平板系列</a></li>
-                    <li><a href="#">创意系列</a></li>
+                    <%
+                   List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");
+                  for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
+					href="/huaweishouji/CanShuo?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
+						<%} %> 
+						</a>
+				</li>
+                  
                 </ul>
             </li>
         </ul>
@@ -106,46 +110,46 @@ OCTYPE html>
     <aside class="pro-rightsidebar">
         <header>
             <p></p>
-            <span>手机系列</span>
+            <span>产品展示</span>
             <div class="product-nav"><a href="index.html">首页 </a>&#62;<a href="#">产品展示</a>&#62;<a>XX椅子</a></div>
         </header>
         
         <main>
         <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");%>
             <div class="pro-right-left">
-                <div class="pro-details-img"><img src="images/proimg.jpg"></div>
+                
 				
+                        <div class="pro-details-img"><img src="<%= ps.get(0).getSrca()%>" /><div class="pro-right-right">
+                </div>
+					
                 <div class="pro-detalis-carousel">
                     <div class="am-slider am-slider-default am-slider-carousel" data-am-flexslider="{itemWidth: 112, itemMargin: 4,move:5,  controlNav: false ,  slideshow: true}">
                         <ul class="am-slides pro-details">
-                            <li><img src="images/mate20pro.jpg" /></li>
-                            <li><img src="images/team1.png" /></li>
-                            <li><img src="images/team2.png" /></li>
-                            <li><img src="images/team3.png" /></li>
-                            <li><img src="images/team4.png" /></li>
-                            <li><img src="images/mate20pro.jpg" /></li>
-                            <li><img src="images/mate20pro.jpg" /></li>
+                        <%for (int i=0;i<ps.size();i++) {  %>
+                <li><img src="<%= ps.get(i).getSrca()%>"/>
+                
+                </li>
+						<%} %> 
+                            
                         </ul>
                     </div>
                 </div>
 				
             </div>
-            <div class="pro-right-right">
-            
-                <ul class="pro-right-info-constant">
+            <ul class="pro-right-info-constant">
                     <li>产品名称:</li>
                     <li>产品颜色:</li>
                     <li>产品售价:</li>
                     <li>市场价:</li>
                 </ul>
                 <ul class="pro-right-info-variable">
-                    <li> <%=ps.get(0).getSname() %> </li>
-                    <li> <%=ps.get(0).getColor()%> </li>
-                    <li> <%=ps.get(0).getJiage()%> </li>
-                    <li> <%=ps.get(0).getJiage()%> </li>
+                    <li><%= ps.get(0).getSname()%></li>
+                    <li><%= ps.get(0).getColor()%></li>
+                    <li><%= ps.get(0).getJiage()%></li>
+                    <li><%= ps.get(0).getJiage()%></li>
                 </ul>
-            </div>
-
+                </div>
+           
             <div class="am-tabs pro-tabs" data-am-tabs>
                 <ul class="am-tabs-nav am-nav am-nav-tabs">
                     <li class="am-active"><a href="#tab1">详细说明1</a></li>

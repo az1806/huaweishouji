@@ -11,7 +11,7 @@ private String spclq;
 private String jiage;
 private int xid;
 private String src;
-
+private String srca;
 public ShangPinLei() {
 }
 
@@ -28,6 +28,7 @@ public ShangPinLei(int sid, String sname, String color, String spxh,
 	this.jiage = jiage;
 	this.xid = xid;
 	this.src = src;
+	this.srca = srca;
 }
 
 public int getSid() {
@@ -105,6 +106,13 @@ public String getSrc() {
 
 public void setSrc(String src) {
 	this.src = src;
+}
+public String getSrca() {
+	return srca;
+}
+
+public void setSrca(String srca) {
+	this.srca = srca;
 }
 
 }

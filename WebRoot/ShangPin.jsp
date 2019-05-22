@@ -111,48 +111,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <header>
 
                     <p></p>
-            <span>手机系列</span>
+            <span>产品展示</span>
         </header>
-         <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");%>
+         
         <ul> 
-            <li >
+        <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");
             
-                <a href="/huaweishouji/CanShuo">
-                <div class="img-box">
-                    <img src=<%=ps.get(0).getSrc() %>>
-                    <p><%=ps.get(0).getSname() %></p>
-                </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="/huaweishouji/CanShuo">
-                    <div class="img-box">
-                        <img src="<%=ps.get(1).getSrc() %>">
-                        <p><%= ps.get(1).getSname()%></p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="/huaweishouji/CanShuo">
-                    <div class="img-box">
-                        <img src="<%=ps.get(2).getSrc() %>">
-                        <p><%= ps.get(2).getSname()%></p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="/huaweishouji/CanShuo">
-                    <div class="img-box">
-                        <img src="<%=ps.get(3).getSrc() %>">
-                        <p><%= ps.get(3).getSname()%></p>
-                    </div>
-                </a>
-            </li>
-
             
+            for (int i=0;i<ps.size();i++) {  %><li > <a href="/huaweishouji/CanShuo">
+                    <div class="img-box">
+                        <img src="<%=ps.get(i).getSrc() %>">
+                        <p><%= ps.get(i).getSname()%></p>
+                    </div>
+                </a></li>
+						<%} %> 
+						
+                
         </ul>
 		
         <div class="pro_list_more_pages">

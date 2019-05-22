@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dao.ShangPInLeiDao;
+import com.dao.ShangPinDao;
 import com.daolmpl.ShangPInLeiDaoimpl;
+import com.daolmpl.ShangPinDaoimpl;
+import com.entitly.ShangPin;
 import com.entitly.ShangPinLei;
 
 public class CanShuoServlet extends HttpServlet {
@@ -27,11 +30,23 @@ public class CanShuoServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		 request.setCharacterEncoding("utf-8");
+		 response.setCharacterEncoding("utf-8");
+		ShangPinDao ptd = new ShangPinDaoimpl();
+		List<ShangPin> pts= ptd.queryShangPins();
+		
+		int n;
+		
+		
+		if(request.getParameter("n")==null){
+			n=pts.get(0).getXid();
+		}else{
+			n=Integer.parseInt(request.getParameter("n"));
+		}
 		ShangPInLeiDao po = new ShangPInLeiDaoimpl();
-		List<ShangPinLei> ps= po.queryShangPinLeis();
+		List<ShangPinLei> ps= po.queryShangPinLeis(n);
 		request.setAttribute("svname", ps);
-
+		request.setAttribute("spname", pts);
 		request.getRequestDispatcher("/ShangPinLei.jsp").forward(request, response);
 	}
 

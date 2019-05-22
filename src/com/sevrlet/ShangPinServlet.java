@@ -9,9 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.ShangPInLeiDao;
 import com.dao.ShangPinDao;
+import com.daolmpl.ShangPInLeiDaoimpl;
 import com.daolmpl.ShangPinDaoimpl;
 import com.entitly.ShangPin;
+import com.entitly.ShangPinLei;
 
 public class ShangPinServlet extends HttpServlet {
 
@@ -26,14 +29,29 @@ public class ShangPinServlet extends HttpServlet {
 	 * @throws IOException if an error occurred
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.getParameter("n");
+		throws ServletException, IOException {
+		 request.setCharacterEncoding("utf-8");
+		 response.setCharacterEncoding("utf-8");
+		ShangPinDao ptd = new ShangPinDaoimpl();
+		List<ShangPin> pts= ptd.queryShangPins();
 		
-			ShangPinDao ptd = new ShangPinDaoimpl();
-			List<ShangPin> pts= ptd.queryShangPins();
+		int n;
+		
+		
+		if(request.getParameter("n")==null){
+			n=pts.get(0).getXid();
+		}else{
+			n=Integer.parseInt(request.getParameter("n"));
+		}
+		
+			
+			
+			ShangPInLeiDao po = new ShangPInLeiDaoimpl();
+			List<ShangPinLei> ps= po.queryShangPinLeis(n);
+			request.setAttribute("svname", ps);
 			request.setAttribute("spname", pts);
 
-			request.getRequestDispatcher("/ShangPinLei").forward(request, response);
+			request.getRequestDispatcher("/ShangPin.jsp").forward(request, response);
 		}
 	
 

@@ -21,7 +21,7 @@ public class GongJuClass {
 		Statement sta = null;
 		try {
 			con = (Connection) DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/huaweidb", "root", "admin");
+					"jdbc:mysql://localhost:3306/huaweidb", "root", "q1w2e3");
 			System.out.println("数据库连接成功！");
 			sta = (Statement) con.createStatement();
 			int n = sta.executeUpdate(sql);
@@ -59,7 +59,7 @@ public class GongJuClass {
 		Statement sta = null;
 		try {
 			con = (Connection) DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/huaweidb" ,"root", "admin");
+					"jdbc:mysql://localhost:3306/huaweidb" ,"root", "q1w2e3");
 			sta = (Statement) con.createStatement();
 			ResultSet rs = (ResultSet) sta.executeQuery(sql);
 			return rs;
