@@ -27,7 +27,7 @@ public  class ShangPInLeiDaoimpl implements ShangPInLeiDao {
 				pv.setSpnc(rs.getString(6));
 				pv.setSpclq(rs.getString(7));
 				pv.setJiage(rs.getString(8));
-			
+				pv.setXid(rs.getInt(9));
 				pv.setSrc(rs.getString(10));
 				pv.setSrca(rs.getString(11));
 				ps.add(pv);

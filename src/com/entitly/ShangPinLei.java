@@ -16,7 +16,7 @@ public ShangPinLei() {
 }
 
 public ShangPinLei(int sid, String sname, String color, String spxh,
-		String spcc, String spnc, String spclq, String jiage) {
+		String spcc, String spnc, String spclq, String jiage,int xid,String src , String srca) {
 	
 	this.sid = sid;
 	this.sname = sname;
@@ -113,6 +113,14 @@ public String getSrca() {
 
 public void setSrca(String srca) {
 	this.srca = srca;
+}
+
+@Override
+public String toString() {
+	return "ShangPinLei [sid=" + sid + ", sname=" + sname + ", color=" + color
+			+ ", spxh=" + spxh + ", spcc=" + spcc + ", spnc=" + spnc
+			+ ", spclq=" + spclq + ", jiage=" + jiage + ", xid=" + xid
+			+ ", src=" + src + ", srca=" + srca + "]";
 }
 
 }
