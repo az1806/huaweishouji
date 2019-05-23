@@ -6,5 +6,5 @@ import com.entitly.ShangPinLei;
 
 public interface ShangPInLeiDao {
 	List<ShangPinLei> queryShangPinLeis(int n);
-	
+	List<ShangPinLei> queryShangPinLeisa();
 }

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <jsp:include page="header.jsp"></jsp:include>
 
  
-                  <% List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");%>
+                  
 <section class="pro-list">
     <aside class="pro-leftsidebar">
         <ul>
@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li>
                 <a>产品分类</a>
                 <ul id="pro-category">
-                   
+                   <% List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");%>
                  <% for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
 					href="/huaweishouji/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
 						<%} %> 

@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 class="am-icon-bars"></i></button>
         <nav>
         <ul class="header-nav-ul am-collapse am-in">
-            <li class="on"><a href="index.html" name="index">首页</a></li>
+            <li class="on"><a href="index.jsp" name="index">首页</a></li>
             <li><a href="/huaweishouji/User" name="about">关于我们</a></li>
             <li><a href="/huaweishouji/ShangPin" name="show">产品展示</a></li>
             <li><a href="article_list.html" name="new">新闻资讯</a></li>
@@ -67,10 +67,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </ul>
 <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
     <ul class="am-slides">
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/lptj.jpg" alt="" ></li>
+        <li><img src="images/HUAWEIp30.jpg" alt="" ></li>
+        <li><img src="images/meigui.jpg" alt="" ></li>
+        <li><img src="images/geyan.jpg" alt="" ></li>
     </ul>
 </div>
 
