@@ -81,6 +81,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li><img src="images/banner.jpg" alt="" ></li>
     </ul>
 </div>
+<% 
+                   List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");%>
 <section class="pro-list">
     <aside class="pro-leftsidebar">
         <ul>
@@ -93,9 +95,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li>
                 <a>产品分类</a>
                 <ul id="pro-category">
-                   <%
-                   List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");
-                  for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
+                   
+                 <% for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
 					href="/huaweishouji/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
 						<%} %> 
 						</a>
@@ -116,7 +117,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          
         <ul> 
         <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");
-            
+          
             
             for (int i=0;i<ps.size();i++) {  %><li > <a href="/huaweishouji/CanShuo">
                     <div class="img-box">

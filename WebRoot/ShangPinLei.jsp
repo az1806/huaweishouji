@@ -119,7 +119,7 @@ OCTYPE html>
             <div class="pro-right-left">
                 
 				
-                        <div class="pro-details-img"><img src="<%= ps.get(0).getSrca()%>" /><div class="pro-right-right">
+                        <div class="pro-details-img"><img src="<%= ps.get(0).getSrca()%>" />
                 </div>
 					
                 <div class="pro-detalis-carousel">
@@ -136,18 +136,21 @@ OCTYPE html>
                 </div>
 				
             </div>
+             <div class="pro-right-right">
             <ul class="pro-right-info-constant">
                     <li>产品名称:</li>
                     <li>产品颜色:</li>
                     <li>产品售价:</li>
                     <li>市场价:</li>
                 </ul>
+               
                 <ul class="pro-right-info-variable">
                     <li><%= ps.get(0).getSname()%></li>
                     <li><%= ps.get(0).getColor()%></li>
                     <li><%= ps.get(0).getJiage()%></li>
                     <li><%= ps.get(0).getJiage()%></li>
                 </ul>
+              
                 </div>
            
             <div class="am-tabs pro-tabs" data-am-tabs>
