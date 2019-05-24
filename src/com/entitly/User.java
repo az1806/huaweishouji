@@ -5,6 +5,8 @@ public class User {
     private String ygname;
     private String ygphone;
     private String ygsex;
+    private String ygphoto;
+    
 	public int getYgid() {
 		return ygid;
 	}
@@ -30,6 +32,12 @@ public class User {
 		this.ygsex = ygsex;
 	}
 	
+	public String getYgphoto() {
+		return ygphoto;
+	}
+	public void setYgphoto(String ygphoto) {
+		this.ygphoto = ygphoto;
+	}
 	public User() {
 		
 	}
@@ -40,12 +48,14 @@ public class User {
 		this.ygname = ygname;
 		this.ygphone = ygphone;
 		this.ygsex = ygsex;
+		this.ygphoto=ygphoto;
 	}
 	@Override
 	public String toString() {
-		return "工号：" + ygid + "员工姓名：" + ygname + "员工手机号："
-				+ ygphone + "员工性别：" + ygsex ;
+		return "User [ygid=" + ygid + ", ygname=" + ygname + ", ygphone="
+				+ ygphone + ", ygsex=" + ygsex + ", ygphoto=" + ygphoto + "]";
 	}
+	
     
     
 } 

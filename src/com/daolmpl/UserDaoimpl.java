@@ -23,6 +23,7 @@ public class UserDaoimpl implements UserDao {
 			u.setYgname(rs.getString(2));
 			u.setYgsex(rs.getString(3));
 			u.setYgphone(rs.getString(4));
+			u.setYgphoto(rs.getString(5));
 			us.add(u);
 		}
      

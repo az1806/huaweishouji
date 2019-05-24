@@ -122,41 +122,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <p >设计团队</p>
             <span>DESIGN TEAM</span>
         </div>
-         <% List<User> us=(List<User>) request.getAttribute("username"); %>
+        
+         
         <div class="about-team-headimg">
         <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-            <img src="images/team1.png" alt="">
+           <ul>
+            <% List<User> us=(List<User>) request.getAttribute("username"); 
+          
+         for (int i=0;i<us.size();i++){   
+         %> 
+        <li>    <img src="<%=us.get(i).getYgphoto() %>" alt="">
            
-            <p><% String  s =us.get(0).getYgname(); %>
-            <%=s %>
+            <p><%=us.get(i).getYgname() %>
+            
             </p>
-            
+                    </li>
+         <% 
+          }
+       %> </ul>
         </div>
-        <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-            <img src="images/team2.png" alt="">
-            <p><% String  z =us.get(1).getYgname(); %>
-            <%=z %></p>
-           
-        </div>
-        <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-            <img src="images/team3.png" alt="">
-            <p><% String  c =us.get(2).getYgname(); %>
-            <%=c %> </p>
-            
-        </div>
-        <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-            <img src="images/team4.png" alt="">
-            <p><% String  x =us.get(3).getYgname(); %>
-            <%=x %></p>
-           
-        </div>
-        <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-            <img src="images/team4.png" alt="">
-            <p><% String  v =us.get(4).getYgname(); %>
-            <%=v %></p>
-            
-        </div>
-        </div>
+    
+      
         <div class="about-slogan">
             <div>
             <p></p>
