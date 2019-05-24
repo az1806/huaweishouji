@@ -54,11 +54,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 class="am-icon-bars"></i></button>
         <nav>
         <ul class="header-nav-ul am-collapse am-in">
-            <li class="on"><a href="index.jsp" name="index">首页</a></li>
+            <li class="on"><a href="/Huawei/GongSi" name="index">首页</a></li>
             <li><a href="/Huawei/User" name="about">关于我们</a></li>
             <li><a href="/Huawei/ShangPin" name="show">产品展示</a></li>
-            <li><a href="article_list.html" name="new">新闻资讯</a></li>
-            <li><a href="contact.html" name="message">联系我们</a>
+            <li><a href="/Huawei/article" name="new">新闻资讯</a></li>
+            <li><a href="Huawei/Contact " name="message">联系我们</a>
                 <div class="secondary-menu">
 
                     <ul><li><a href="message.html" class="message"></a></li></ul>

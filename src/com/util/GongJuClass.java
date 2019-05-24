@@ -32,20 +32,20 @@ public class GongJuClass {
 			System.out.println("数据库连接失败！或执行sql失败！");
 			e.printStackTrace();
 		} finally {
-//			try {
-//				if (sta != null) {
-//					sta.close();
-//				}
-//				if (con != null) {
-//					con.close();
-//				}
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				System.out.println("数据库连接关闭失败！");
-//				e.printStackTrace();
-//			}
+			/*try {
+			if (sta != null) {
+				sta.close();
+				}
+			if (con != null) {
+					con.close();
+			}
+		} catch (SQLException e) {
+				// TODO Auto-generated catch block
+			System.out.println("数据库连接关闭失败！");
+			e.printStackTrace();
+		}*/
 		}
-
+			
 		return 0;
 	}
 
@@ -69,18 +69,18 @@ public class GongJuClass {
 			System.out.println("数据库连接失败！或执行sql失败！");
 			e.printStackTrace();
 		} finally {
-//			try {
-//				if (sta != null) {
-//					sta.close();
-//				}
-//				if (con != null) {
-//					con.close();
-//				}
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				System.out.println("数据库连接关闭失败！");
-//				e.printStackTrace();
-//			}
+		/*try {
+	if (sta != null) {
+				sta.close();
+			}
+				if (con != null) {
+				con.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				System.out.println("数据库连接关闭失败！");
+			e.printStackTrace();
+		}*/
 		}
 
 		return null;
