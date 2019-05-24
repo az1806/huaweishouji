@@ -1,11 +1,13 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*"  pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+  
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
   <head>
     <base href="<%=basePath%>">
     
@@ -23,27 +25,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+ 
    <footer>
+   
     <div>
         <div class="footer-info">
             <div class="footer-content">
                 <img src="images/qccode.png" alt="">
                <div>
-                <p>招商热线:0714-8868331</p>
+                <p>招商热线:400-830-8300</p>
                 <div class="footer-box">
                     <i class="icon-tel"></i>
                     <span>公司电话:</span>
-                    <span>0714-8868331</span>
+                    <span>400-830-8300</span>
                 </div>
                 <div class="footer-box">
                     <i class="icon-email"></i>
                     <span>公司邮箱:</span>
-                    <span>123@dayeyunalading.com</span>
+                    <span>corporate.comms@huawei.com</span>
                 </div>
                 <div class="footer-box">
                     <i class="icon-address"></i>
                     <span>公司地址:</span>
-                    <span>湖北省XXX市XXX大道小区B栋201</span>
+                    <span>中国广东省深圳市龙岗区坂田</span>
                 </div>
                </div>
             </div>

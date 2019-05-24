@@ -14,7 +14,7 @@ public class GongSiDaoimpl implements GongSiDao {
 
 	public List<GongSi> queryGongSis() {
 		List<GongSi> gs = new ArrayList<GongSi>();
-		ResultSet rs = GongJuClass.querySQL("select * from gsdb;");
+		ResultSet rs = GongJuClass.querySQL("select * from gsbdb;");
 		try {
 			while (rs.next()) {
 				GongSi hw = new GongSi();
@@ -24,6 +24,7 @@ public class GongSiDaoimpl implements GongSiDao {
 				hw.setJianjie(rs.getString(3));
 				hw.setGsphone(rs.getString(4));
 				hw.setGsemail(rs.getString(5));
+				hw.setGsdz(rs.getString(6));
 				gs.add(hw);
 			}
 

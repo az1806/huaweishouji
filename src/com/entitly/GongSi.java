@@ -7,17 +7,19 @@ private String gsname;
 private String jianjie;
 private String gsphone;
 private String gsemail;
+private String gsdz;
 public GongSi() {
 	
 }
 public GongSi(int gsid, String gsname, String jianjie, String gsphone,
-		String gsemail) {
+		String gsemail ,String gsdz) {
 
 	this.gsid = gsid;
 	this.gsname = gsname;
 	this.jianjie = jianjie;
 	this.gsphone = gsphone;
 	this.gsemail = gsemail;
+	this.gsdz = gsdz;
 }
 public int getGsid() {
 	return gsid;
@@ -49,10 +51,18 @@ public String getGsemail() {
 public void setGsemail(String gsemail) {
 	this.gsemail = gsemail;
 }
+
+public String getGsdz() {
+	return gsdz;
+}
+public void setGsdz(String gsdz) {
+	this.gsdz = gsdz;
+}
 @Override
 public String toString() {
 	return "GongSi [gsid=" + gsid + ", gsname=" + gsname + ", jianjie="
-			+ jianjie + ", gsphone=" + gsphone + ", gsemail=" + gsemail + "]";
+			+ jianjie + ", gsphone=" + gsphone + ", gsemail=" + gsemail
+			+ ", gsdz=" + gsdz + "]";
 }
 
 

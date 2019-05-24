@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li><a href="Huawei/Contact " name="message">联系我们</a>
                 <div class="secondary-menu">
 
-                    <ul><li><a href="message.html" class="message"></a></li></ul>
+                    <ul><li><a href="message.jsp" class="message"></a></li></ul>
                 </div>
             </li>
         </ul>
