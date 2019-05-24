@@ -14,18 +14,44 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
+<<<<<<< HEAD
+    <servlet-name>lyServlet</servlet-name>
+    <servlet-class>com.sevrlet.lyServlet</servlet-class>
+=======
     <servlet-name>ShangPinServlet</servlet-name>
     <servlet-class>com.sevrlet.ShangPinServlet</servlet-class>
+>>>>>>> 4e6bf62257a610abfbabe0903aa7c6659d15ad18
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
+<<<<<<< HEAD
+    <servlet-name>message</servlet-name>
+    <servlet-class>com.sevrlet.message</servlet-class>
+=======
     <servlet-name>ShangPinLeiServlet</servlet-name>
     <servlet-class>com.sevrlet.ShangPinLeiServlet</servlet-class>
+>>>>>>> 4e6bf62257a610abfbabe0903aa7c6659d15ad18
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
+<<<<<<< HEAD
+    <servlet-name>login</servlet-name>
+    <servlet-class>com.sevrlet.login</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>article_listservlet</servlet-name>
+    <servlet-class>com.sevrlet.article_listservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>article_list_contentservlet</servlet-name>
+    <servlet-class>com.sevrlet.article_list_contentservlet</servlet-class>
+=======
     <servlet-name>CanShuoServlet</servlet-name>
     <servlet-class>com.sevrlet.CanShuoServlet</servlet-class>
   </servlet>
@@ -34,21 +60,48 @@
   <servlet>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>com.sevrlet.UserServlet</servlet-class>
+>>>>>>> 4e6bf62257a610abfbabe0903aa7c6659d15ad18
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
+<<<<<<< HEAD
+    <servlet-name>article_list_moreservlet</servlet-name>
+    <servlet-class>com.sevrlet.article_list_moreservlet</servlet-class>
+  </servlet>
+
+=======
     <servlet-name>GongSiServlet</servlet-name>
     <servlet-class>com.sevrlet.GongSiServlet</servlet-class>
   </servlet>
 
   
   
+>>>>>>> 4e6bf62257a610abfbabe0903aa7c6659d15ad18
 
 
 
 
   <servlet-mapping>
+<<<<<<< HEAD
+    <servlet-name>message</servlet-name>
+    <url-pattern>/message</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>article_listservlet</servlet-name>
+    <url-pattern>/article</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>article_list_contentservlet</servlet-name>
+    <url-pattern>/content</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>article_list_moreservlet</servlet-name>
+    <url-pattern>/more</url-pattern>
+  </servlet-mapping>
+
+
+=======
     <servlet-name>LoiginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
@@ -74,6 +127,7 @@
     <url-pattern>/GongSi</url-pattern>
   </servlet-mapping>
   
+>>>>>>> 4e6bf62257a610abfbabe0903aa7c6659d15ad18
  
   <welcome-file-list>
     <welcome-file>GongSi</welcome-file>
