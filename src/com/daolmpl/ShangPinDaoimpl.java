@@ -26,7 +26,7 @@ public class ShangPinDaoimpl implements ShangPinDao{
 			while (rs.next()) {
 				ShangPin pt = new ShangPin();
 
-				pt.setId(rs.getInt(1));
+				pt.setXid(rs.getInt(1));
 				pt.setName(rs.getString(2));
 				pts.add(pt);
 			}
