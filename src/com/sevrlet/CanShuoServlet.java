@@ -37,7 +37,6 @@ public class CanShuoServlet extends HttpServlet {
 		
 		int n;
 		
-		
 		if(request.getParameter("n")==null){
 			n=pts.get(0).getXid();
 		}else{

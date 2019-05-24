@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-cn">
 <head>
-    <title>某某家具设计公司企业官网-模板之家</title>
+    <title>华为公司企业官网</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
@@ -75,19 +75,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <span></span>
         <a href="#">MORE &#62; &#62;</a>
     </div>
-       <%   List<ShangPinLei> pa=(List<ShangPinLei>) request.getAttribute("saname");%>
+       
     <div class="index-content">
  
         <div class="product-list">
-          
+          <%   List<ShangPinLei> pa=(List<ShangPinLei>) request.getAttribute("saname");%>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(1).getXid()%>">
-                    <img src="<%=pa.get(1).getSrc() %>" />
+                <a href="/Huawei/CanShuo?n=<%=pa.get(0).getXid()%>">
+                    <img src="<%=pa.get(0).getSrc() %>" />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(2).getXid()%>">
-                    <img src="<%=pa.get(0).getSrc()%>" />
+                <a href="/huaweishouji/CanShuo?n=<%=pa.get(1).getXid()%>">
+                    <img src="<%=pa.get(1).getSrc()%>" />
+                </a>
+            </div>
+            <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
+                <a href="/huaweishouji/CanShuo?n=<%=pa.get(4).getXid()%>">
+                    <img src="<%=pa.get(4).getSrc() %>" />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
@@ -96,18 +101,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(6).getXid()%>">
-                    <img src="<%=pa.get(6).getSrc() %>" />
+                <a href="/huaweishouji/CanShuo?n=<%=pa.get(8).getXid()%>">
+                    <img  src="<%=pa.get(8).getSrc() %>"  />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
                 <a href="/huaweishouji/CanShuo?n=<%=pa.get(9).getXid()%>">
-                    <img  src="<%=pa.get(9).getSrc() %>"  />
-                </a>
-            </div>
-            <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(10).getXid()%>">
-                    <img src="<%=pa.get(10).getSrc() %>" >
+                    <img src="<%=pa.get(9).getSrc() %>" >
                 </a>
             </div>
         </div>

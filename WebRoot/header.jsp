@@ -55,8 +55,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <nav>
         <ul class="header-nav-ul am-collapse am-in">
             <li class="on"><a href="index.jsp" name="index">首页</a></li>
-            <li><a href="/huaweishouji/User" name="about">关于我们</a></li>
-            <li><a href="/huaweishouji/ShangPin" name="show">产品展示</a></li>
+            <li><a href="/Huawei/User" name="about">关于我们</a></li>
+            <li><a href="/Huawei/ShangPin" name="show">产品展示</a></li>
             <li><a href="article_list.html" name="new">新闻资讯</a></li>
             <li><a href="contact.html" name="message">联系我们</a>
                 <div class="secondary-menu">

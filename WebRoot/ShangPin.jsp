@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <ul id="pro-category">
                    <% List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");%>
                  <% for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
-					href="/huaweishouji/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
+					href="/Huawei/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
 						<%} %> 
 						</a>
 				</li>
