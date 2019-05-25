@@ -2,6 +2,7 @@ package com.sevrlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,10 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.GongSiDao;
 import com.dao.ShangPInLeiDao;
 import com.dao.ShangPinDao;
+import com.daolmpl.GongSiDaoimpl;
 import com.daolmpl.ShangPInLeiDaoimpl;
 import com.daolmpl.ShangPinDaoimpl;
+import com.entitly.GongSi;
 import com.entitly.ShangPin;
 import com.entitly.ShangPinLei;
 
@@ -38,8 +42,10 @@ public class GongSiServlet extends HttpServlet {
 			ShangPInLeiDao pw = new ShangPInLeiDaoimpl();
 			List<ShangPinLei> pa= pw.queryShangPinLeisa();
 			request.setAttribute("saname", pa);
-			
+			GongSiDao hws = new GongSiDaoimpl();
 
+			List<GongSi> gs=hws.queryGongSis();
+			request.setAttribute("gsname", gs);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 

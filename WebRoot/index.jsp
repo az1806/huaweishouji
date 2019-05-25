@@ -20,9 +20,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <section class="index-content-section-second">
             <div>
                 <div class="index-auto">
+                <%   List<GongSi> gs=(List<GongSi>) request.getAttribute("gsname");%>
             <article>公司介绍</article>
-            <h6>COMPANY INTRODUCTION</h6>
-            <main>FURNITUREDESGIN是一家拥有丰富的经验的家具设计公司。所设计的家具销往全国各地。设计的实践，在于为生活提供更舒适的环境及精确负责的施工，我们具有非常专业的团队，为客户创造符合装修风格的贴心家具。满足客户的要求与喜好，甚至将梦想中的生活氛围透过专业的感知力呈现，将家具透过色彩以及最和谐的比例设计而成。公司凭借高素质的人才队伍，先进的工艺和完善的企业管理，赢得了国内外客户的良好赞誉。</main>
+            <h6><%=gs.get(0).getGsname() %></h6>
+            <main><%=gs.get(0).getJianjie()%></main>
             <a class="index-button" href="#">查看详情</a>
                 </div>
             </div>
