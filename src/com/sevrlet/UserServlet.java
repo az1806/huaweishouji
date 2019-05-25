@@ -27,9 +27,11 @@ public class UserServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-System.out.print("qwe");
-		UserDao ue =   new UserDaoimpl();
-		List<User> us= ue.queryUsers();
+		request.setCharacterEncoding("utf-8");
+		 response.setCharacterEncoding("utf-8");
+		
+		UserDao uw =   new UserDaoimpl();
+		List<User> us= uw.queryUsers();
 		request.setAttribute("username", us);
 
 		request.getRequestDispatcher("/User.jsp").forward(request, response);

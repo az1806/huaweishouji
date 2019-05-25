@@ -17,14 +17,14 @@ public class UserDaoimpl implements UserDao {
 	
 	try {
 		while (rs.next()) {
-			User u = new User();
+			User ue = new User();
 
-			u.setYgid(rs.getInt(1));
-			u.setYgname(rs.getString(2));
-			u.setYgsex(rs.getString(3));
-			u.setYgphone(rs.getString(4));
-			u.setYgphoto(rs.getString(5));
-			us.add(u);
+			ue.setYgid(rs.getInt(1));
+			ue.setYgname(rs.getString(2));
+			ue.setYgsex(rs.getString(3));
+			ue.setYgphone(rs.getString(4));
+			ue.setYgphoto(rs.getString(5));
+			us.add(ue);
 		}
      
 	} catch (SQLException e) {
