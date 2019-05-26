@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 
                    for (int i=0;i<xw.size();i++) {
                      %>
-                     <li><a href="article_list.html"><%=xw.get(i).getXwname() %></a></li>
+                     <li><a href="/Huawei/article?m=<%=xw.get(i).getXwid() %>"><%=xw.get(i).getXwname() %></a></li>
                      <%
                    }
                    %></ul>
@@ -22,9 +22,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <a href="article_list_more.html">MORE &#62; &#62;</a>
         </div>
     </header>
-
+<div>
     <section class="article-content">
-
+<ul>
+ <%    List<article_list_more> qq=   ( List<article_list_more>) request.getAttribute("at");
+                
+                   for (int i=0;i<qq.size();i++) {
+                     %>
+                     <li>
+                <div class="article-date">
+                    <strong><%=qq.get(i).getZxid() %></strong>
+                    <p><%=qq.get(i).getZxtime() %></p>
+                </div>
+                <div class="article-info">
+                    <a href="/Huawei/content?m=<%=qq.get(i).getXwid() %>">
+                        <h3><%=qq.get(i).getZxname() %></h3>
+                        <p><%=qq.get(i).getZxneirong() %></p>
+                    </a>
+                </div>
+            </li>
+                   <%}
+                   %></ul>
+          
     </section>
 </div>
 ﻿<jsp:include page="footer.jsp"></jsp:include>

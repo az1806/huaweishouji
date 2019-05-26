@@ -11,10 +11,10 @@ import com.entitly.article_list_more;
 import com.util.GongJuClass;
 
 public class article_list_moredaoimpl implements article_list_moredao {
-	public List<article_list_more> queryarticle() {
+	public List<article_list_more> queryarticle(int m) {
 		
 	List<article_list_more> nr = new ArrayList<article_list_more>();
-	ResultSet rs = GongJuClass.querySQL("select * from xwzxdb");
+	ResultSet rs = GongJuClass.querySQL("select * from xwzxdb where xwid="+m);
 	try {
 		while (rs.next()) {
 			article_list_more n = new article_list_more();
