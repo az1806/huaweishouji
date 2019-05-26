@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 
                    for (int i=0;i<xw.size();i++) {
                      %>
-                     <li><a href="/Huawei/article?m=<%=xw.get(i).getXwid() %>"><%=xw.get(i).getXwname() %></a></li>
+                     <li><a href="/HuaWeiS/article?m=<%=xw.get(i).getXwid() %>"><%=xw.get(i).getXwname() %></a></li>
                      <%
                    }
                    %></ul>
@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <p><%=qq.get(i).getZxtime() %></p>
                 </div>
                 <div class="article-info">
-                    <a href="/Huawei/content?m=<%=qq.get(i).getXwid() %>">
+                    <a href="/HuaWeiS/content?m=<%=qq.get(i).getXwid() %>">
                         <h3><%=qq.get(i).getZxname() %></h3>
                         <p><%=qq.get(i).getZxneirong() %></p>
                     </a>

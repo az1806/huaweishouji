@@ -21,7 +21,7 @@ public class ShangPinDaoimpl implements ShangPinDao{
 
 	public List<ShangPin> queryShangPins() {
 		List<ShangPin> pts = new ArrayList<ShangPin>();
-		ResultSet rs = GongJuClass.querySQL("SELECT * FROM huaweidb.splbdb;;");
+		ResultSet rs = GongJuClass.querySQL("SELECT * FROM huaweidb.splbdb;");
 		try {
 			while (rs.next()) {
 				ShangPin pt = new ShangPin();

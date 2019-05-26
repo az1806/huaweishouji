@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <ul id="pro-category">
                    <% List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");%>
                  <% for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
-					href="/Huawei/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
+					href="/HuaWeiS/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
 						<%} %> 
 						</a>
 				</li>
@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");
           
             
-            for (int i=0;i<ps.size();i++) {  %><li > <a href="/huaweishouji/CanShuo?n=<%=ps.get(i).getXid()%>">
+            for (int i=0;i<ps.size();i++) {  %><li > <a href="/HuaWeiS/CanShuo?n=<%=ps.get(i).getXid()%>">
                     <div class="img-box">
                         <img src="<%=ps.get(i).getSrc() %>">
                         <p><%= ps.get(i).getSname()%></p>

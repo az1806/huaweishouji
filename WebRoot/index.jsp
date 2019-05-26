@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <article>公司介绍</article>
             <h6><%=gs.get(0).getGsname() %></h6>
             <main><%=gs.get(0).getJianjie()%></main>
-            <a class="index-button" href="#">查看详情</a>
+            <a class="index-button" href="/HuaWeiS/User">查看详情</a>
                 </div>
             </div>
         </section>
@@ -34,10 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <section class="index-product">
     <main>
         <ul>
-            <li class="index-active"><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+           
         </ul>
     </main>
     <main></main>
@@ -55,32 +52,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="product-list">
           <%   List<ShangPinLei> pa=(List<ShangPinLei>) request.getAttribute("saname");%>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/Huawei/CanShuo?n=<%=pa.get(0).getXid()%>">
+                <a href="/HuaWeis/CanShuo?n=<%=pa.get(0).getXid()%>">
                     <img src="<%=pa.get(0).getSrc() %>" />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(1).getXid()%>">
+                <a href="/HuaWeiS/CanShuo?n=<%=pa.get(1).getXid()%>">
                     <img src="<%=pa.get(1).getSrc()%>" />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(4).getXid()%>">
+                <a href="/HuaWeiS/CanShuo?n=<%=pa.get(4).getXid()%>">
                     <img src="<%=pa.get(4).getSrc() %>" />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(5).getXid()%>">
+                <a href="/HuaWeiS/CanShuo?n=<%=pa.get(5).getXid()%>">
                     <img src="<%=pa.get(5).getSrc() %>" />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(8).getXid()%>">
+                <a href="/HuaWeiS/CanShuo?n=<%=pa.get(8).getXid()%>">
                     <img  src="<%=pa.get(8).getSrc() %>"  />
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/huaweishouji/CanShuo?n=<%=pa.get(9).getXid()%>">
+                <a href="/HuaWeiS/CanShuo?n=<%=pa.get(9).getXid()%>">
                     <img src="<%=pa.get(9).getSrc() %>" >
                 </a>
             </div>
@@ -98,33 +95,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
         <div class="new-index">
+        <%    List<article_list_more> qq=   ( List<article_list_more>) request.getAttribute("at");%>
+                
             <ul>
-                <li><img  src="images/productlogo.png" alt=""> </li>
-                <li>  <a href="article_list_content.html"><h3>怎么搭配茶几与沙发?</h3>
-                    <article>在现代居住空间里面，有沙发的地方似乎总也少不了
-                        茶几的身影。尤其在现代客厅里，一款实用、时尚的</article></a></li>
+                <li><img  src="images/Fuwu.jpg" alt=""> </li>
+                <li>  <a href="HuaWeiS/content"><h3><%=qq.get(0).getZxname() %></h3>
+                    <article><%=qq.get(0).getZxneirong() %></article></a></li>
             </ul>
+            
+                  
             <ul>
-                <li><a href="article_list_content.html"><h3>家具有哪些类型?</h3>
-                    <article>按家具从风格上可以分为：现代家具、欧式古典家具、
-                        美式家具、中式古典家具（也就是红木家具），还有
+            <% for (int i=1;i<qq.size()-1;i++) {
+                     %>
+                     <li><a href="HuaWeiS/content"><h3><%=qq.get(i).getZxname() %></h3>
+                    <article><%=qq.get(i).getZxneirong() %>
                     </article>
                 </a></li>
-                <li><a href="article_list_content.html"><h3>实木家具需保养防开裂</h3>
-                    <article>实木家具越来越受人们的欢迎，有很多业主在装修时
-                        都选择实木家具。但是他们购买之后不对它进行保养
-                    </article></a>
-                </li>
-                <li><a href="article_list_content.html"><h3>卧室如何选择合适的衣橱家具色彩</h3>
-                    <article>要选择合适的家具色彩，首先要符合个人爱好，又要
-                        注意与房间的大小、室内光线的明暗相结合，并且要
-                    </article></a>
-                </li>
-                <li><a href="article_list_content.html"><h3>韩派办公家具制作工艺过程</h3>
-                    <article>苏州韩派办公家具制作工艺过程，品牌办公家具厂家
-                        都具有一整套生产流程，通过对工艺流程的规范以及
-                    </article></a>
-                </li>
+                     <%} %>
+                
+                
             </ul>
 
         </div>

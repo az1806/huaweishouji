@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div>
     <header class="header-article-list">
         <div class="article-position">
-          <a  href="Huawei/content">
+          <a  href="HuaWeiS/content">
               <span>上一篇</span>
               <span>家具有哪些类型</span>
           </a>
@@ -20,12 +20,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 
                    for (int i=0;i<xw.size();i++) {
                      %>
-                     <li><a href="/Huawei/content?m=<%=xw.get(i).getXwid() %>"><%=xw.get(i).getXwname() %></a></li>
+                     <li><a href="/HuaWeiS/content?m=<%=xw.get(i).getXwid() %>"><%=xw.get(i).getXwname() %></a></li>
                      <%
                    }
                    %></ul>
         <div class="article-more-btn">
-            <a href="Huawei/content">
+            <a href="HuaWeiS/content">
                 <span>下一篇</span>
                 <span>家具有哪些类型</span>
             </a>

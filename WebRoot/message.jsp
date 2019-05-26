@@ -45,7 +45,7 @@ function checkForm(){
 		</header>
 		<div>
 			<form class="message-form" method="post"
-				action="/huaweishouji/message" onsubmit="return checkForm(this)">
+				action="/HuaWeiS/message" onsubmit="return checkForm(this)">
 
 				<label>姓名 
 				<input type="text" name="lyname" >
