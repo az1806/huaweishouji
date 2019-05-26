@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li><a href="/HuaWeiS/User" name="about">关于我们</a></li>
             <li><a href="/HuaWeiS/ShangPin" name="show">产品展示</a></li>
             <li><a href="/HuaWeiS/article" name="new">新闻资讯</a></li>
-            <li><a href="HuaWeiS/Contact " name="message">联系我们</a>
+            <li><a href="/HuaWeiS/Contact " name="message">联系我们</a>
                 <div class="secondary-menu">
 
                     <ul><li><a href="message.jsp" class="message"></a></li></ul>
