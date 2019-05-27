@@ -9,25 +9,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <jsp:include page="header.jsp"></jsp:include>
    <div>
     <header class="header-article-list">
+     <%    List<article_list> xw = ( List<article_list>) request.getAttribute("article");%>
         <div class="article-position">
-          <a  href="HuaWeiS/content">
+          <a  href="/HuaWeiS/content">
               <span>上一篇</span>
-              <span>家具有哪些类型</span>
+             
           </a>
         </div>
           <ul>
-      <%    List<article_list> xw = ( List<article_list>) request.getAttribute("article");
+     
                 
-                   for (int i=0;i<xw.size();i++) {
+                  <% for (int i=0;i<xw.size();i++) {
                      %>
                      <li><a href="/HuaWeiS/content?m=<%=xw.get(i).getXwid() %>"><%=xw.get(i).getXwname() %></a></li>
                      <%
                    }
                    %></ul>
         <div class="article-more-btn">
-            <a href="HuaWeiS/content">
+            <a href="/HuaWeiS/content">
                 <span>下一篇</span>
-                <span>家具有哪些类型</span>
+        
             </a>
         </div>
     </header>

@@ -2,7 +2,6 @@ package com.sevrlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,20 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.GongSiDao;
 import com.dao.ShangPInLeiDao;
 import com.dao.ShangPinDao;
-import com.dao.article_list_moredao;
-import com.daolmpl.GongSiDaoimpl;
 import com.daolmpl.ShangPInLeiDaoimpl;
 import com.daolmpl.ShangPinDaoimpl;
-import com.daolmpl.article_list_moredaoimpl;
-import com.entitly.GongSi;
 import com.entitly.ShangPin;
 import com.entitly.ShangPinLei;
-import com.entitly.article_list_more;
 
-public class GongSiServlet extends HttpServlet {
+public class ChaXunServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -37,18 +30,21 @@ public class GongSiServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		 request.setCharacterEncoding("utf-8");
+
+		request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
-			article_list_moredao zxnr = new article_list_moredaoimpl();
-			List<article_list_more> qq= zxnr.queryarticles();
-			request.setAttribute("at",qq);
-			ShangPInLeiDao pw = new ShangPInLeiDaoimpl();
-			List<ShangPinLei> pa= pw.queryShangPinLeisa();
-			request.setAttribute("saname", pa);
-			GongSiDao hws = new GongSiDaoimpl();
-			List<GongSi> gs=hws.queryGongSis();
-			request.setAttribute("gsname", gs);
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			
+			
+			String s=request.getParameter("sr");
+			ShangPInLeiDao pvo = new ShangPInLeiDaoimpl();
+			List<ShangPinLei> pns= pvo.ShangPinLeisa(s);
+			
+			 ShangPinDao ptd = new ShangPinDaoimpl();
+				List<ShangPin> pts= ptd.queryShangPins();
+			request.setAttribute("spname", pts);
+			request.setAttribute("same", pns);
+			
+			request.getRequestDispatcher("/ShangPins.jsp").forward(request, response);
 	}
 
 	/**

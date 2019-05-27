@@ -31,14 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
 </section>
 
-<section class="index-product">
-    <main>
-        <ul>
-           
-        </ul>
-    </main>
-    <main></main>
-    <main></main>
+
 </section>
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
 <section class="index-margin-bottom">

@@ -67,6 +67,35 @@ public  class ShangPInLeiDaoimpl implements ShangPInLeiDao {
 		}
 		return pa;
 	}
+
+	@Override
+	public List<ShangPinLei> ShangPinLeisa(String s) {
+		List<ShangPinLei> pns = new ArrayList<ShangPinLei>();
+		ResultSet rs = GongJuClass.querySQL("select * from spdb where spname like '%"+s+"%'");
+		try {
+			while (rs.next()) {
+				ShangPinLei p = new ShangPinLei();
+
+				p.setSid(rs.getInt(1));
+				p.setSname(rs.getString(2));
+				p.setColor(rs.getString(3));
+				p.setSpxh(rs.getString(4));
+				p.setSpcc(rs.getString(5));
+				p.setSpnc(rs.getString(6));
+				p.setSpclq(rs.getString(7));
+				p.setJiage(rs.getString(8));
+				p.setXid(rs.getInt(9));
+				p.setSrc(rs.getString(10));
+				p.setSrca(rs.getString(11));
+				pns.add(p);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return pns;
+	}
 	}
 
 	

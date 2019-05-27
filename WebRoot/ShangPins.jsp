@@ -2,12 +2,11 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="zh-cn">
-<jsp:include page="header.jsp"></jsp:include>
+<html>
+ <jsp:include page="header.jsp"></jsp:include>
 
  
                   
@@ -17,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li>
                 <a>产品搜索</a>
                 <ul id="pro-search">
-                    <li><form action="/HuaWeiS/ChaXun" method="get"><a><input type="text"  class="pro-search"  name="sr"  ><a class="pro-search-btn" ><input type="submit" value="搜索"  /></a></a></form></li>
+<li><form action="/HuaWeiS/ChaXun" method="get"><a><input type="text"  class="pro-search"  name="sr"  ><a class="pro-search-btn" ><input type="submit" value="搜索"  />   </a></a></form></li>
                 </ul>
             </li>
             <li>
@@ -42,15 +41,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <p></p>
             <span>产品展示</span>
         </header>
-            <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");%>
+            <%   List<ShangPinLei> pns=(List<ShangPinLei>) request.getAttribute("same");%>
         <ul> 
      
           
             
-           <%  for (int i=0;i<ps.size();i++) {  %><li > <a href="/HuaWeiS/CanShuo?n=<%=ps.get(i).getXid()%>">
+           <%  for (int i=0;i<pns.size();i++) {  %><li > <a href="/HuaWeiS/CanShuo?n=<%=pns.get(i).getXid()%>">
                     <div class="img-box">
-                        <img src="<%=ps.get(i).getSrc() %>">
-                        <p><%= ps.get(i).getSname()%></p>
+                        <img src="<%=pns.get(i).getSrc() %>">
+                        <p><%= pns.get(i).getSname()%></p>
                     </div>
                 </a></li>
 						<%} %> 
