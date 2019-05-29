@@ -37,12 +37,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <header>
     <div class="header-top">
         <div class="width-center">
-            <div class="header-logo "><img src="images/huawei.jpg" alt=""></div>
+            <div class="header-logo ">
+            <img src="images/huawei.jpg" alt="" />
+            </div>
             <div class="header-title div-inline">
                 <strong>华为公司</strong>
                 <span>www.huaweixin.com</span>
             </div>
-
             <div class="search-box div-inline">
                 <div class="input-box"><input type="text" name="" placeholder="             请输入关键字"></div>
                 <div class="search-botton"></div>
@@ -64,6 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
             </li>
         </ul>
+        </div>
 <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
     <ul class="am-slides">
         <li><img src="images/lptj.jpg" alt="" ></li>

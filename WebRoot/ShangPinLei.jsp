@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li>
                 <a>产品搜索</a>
                 <ul id="pro-search">
-                    <li><a><input type="text"  class="pro-search"><a class="pro-search-btn">搜索</a></a></li>
+                    <li><form action="/HuaWeiS/ChaXun" method="get"><a><input type="text"  class="pro-search"  name="sr"  ><a class="pro-search-btn" ><input type="submit" value="搜索"  />   </a></a></form></li>
                 </ul>
             </li>
             <li>

@@ -11,7 +11,9 @@ public class GongJuClass {
 
 	
 	private static final String db_name = "huaweidb"; 
-
+	
+	
+	
 	public static int updateSQL(String sql) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -86,5 +88,10 @@ public class GongJuClass {
 		return null;
 	}
 
+	
+	}
 
-}
+	
+
+
+
