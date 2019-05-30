@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta name="description" content="网站简介" />
 		<!-- 网站简介 -->
 		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
-		<title>穷在闹市出品</title>
+		<title>华为为你共享</title>
 
 		<!-- 公共样式 开始 -->
 		<link rel="shortcut icon" href="images/favicon.ico"/>
@@ -42,25 +42,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="login_main">
 			<div class="box">
 				<div class="left">
-					<img src="images/logo.png" />
-					<p>穷在闹市出品</p>
+					<img src="images/HWuser.jpg" />
+					<p>华为为你共享</p>
 				</div>
 				<div class="right">
-					<form class="layui-form layui-form-pane" action="frame.html">
+					<form class="layui-form layui-form-pane" action="/HuaWeiS/ZhuCe" method="post">
 						<div class="layui-form-item">
 							<label class="layui-form-label login_title"><i class="iconfont icon-gerenzhongxin-denglu"></i></label>
 							<div class="layui-input-block login_input">
-								<input type="text" name="name" required lay-verify="required" autocomplete="off" placeholder="请输入您的用户名" class="layui-input">
+								<input type="text" name="glname" required lay-verify="required" autocomplete="off" placeholder="请输入您的用户名" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item">
 							<label class="layui-form-label login_title"><i class="iconfont icon-mima1"></i></label>
 							<div class="layui-input-block login_input">
-								<input type="password" name="password" required lay-verify="required" autocomplete="off" placeholder="请输入密码" class="layui-input">
+								<input type="password" name="glpwd" required lay-verify="required" autocomplete="off" placeholder="请输入密码" class="layui-input">
+							</div>
+							<div class="layui-input-block login_input">
+								<input type="password" name="glpwd1" required lay-verify="required" autocomplete="off" placeholder="请输入密码" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item">
-							<button class="layui-btn layui-btn-fluid login_but" lay-submit lay-filter="loginBut">登 录</button>
+							<input type="submit" class="layui-btn layui-btn-fluid login_but" lay-submit lay-filter="loginBut" value="注册">
 						</div>
 						<div class="layui-form-item">
 							<input type="radio" name="sex" value="管理员" title="管理员" checked lay-filter="userType">

@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta name="description" content="网站简介" />
 		<!-- 网站简介 -->
 		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
-		<title>穷在闹市出品</title>
+		<title>华为为你共享</title>
 
 		<!-- 公共样式 开始 -->
 		<link rel="shortcut icon" href="images/favicon.ico"/>
@@ -60,9 +60,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<!--轮播图 结束-->
 			<div class="logo">
-				<img src="images/login_logo.png" />
+				<img src="images/HWuser.jpg" />
 				<div>
-					<h1>穷在闹市出品</h1>
+					<h1>华为为你共享</h1>
 					<p>版本号:19.3.01</p>
 				</div>
 			</div>

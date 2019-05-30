@@ -10,11 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.GuanLiDao;
 import com.daolmpl.GuanLiDaoimpl;
-import com.entitly.GuanLi;
 
-
-public class LoginServlet extends HttpServlet {
-
+public class ZhuCeServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -29,41 +26,20 @@ public class LoginServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setCharacterEncoding("utf-8");
-		 response.setCharacterEncoding("utf-8");
-		
-		GuanLiDao gDao = new 	GuanLiDaoimpl();
-		String glname = request.getParameter("glname");
-		String glpwd= request.getParameter("glpwd");
-		GuanLi user = gDao.Login(glname, glpwd);
-		if (user != null && user.getGlpwd().equals(glpwd)) { //µÇÂ¼³É¹¦
-			request.getRequestDispatcher("/frame.html").forward(request, response);
-		
-			return;
-		}
-		//µÇÂ¼Ê§°Ü
-		response.sendRedirect("/HuaWeiS/HouTai/Login1.jsp");
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		out.print("    This is ");
+		out.print(this.getClass());
+		out.println(", using the GET method");
+		out.println("  </BODY>");
+		out.println("</HTML>");
+		out.flush();
+		out.close();
 	}
-
-	
-		
-	
-	
-
-
-
-
-
-
-	private void alert(Object println) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-
-
 
 	/**
 	 * The doPost method of the servlet. <br>
@@ -77,28 +53,27 @@ public class LoginServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
-		
-		
-		GuanLiDao gl = new 	GuanLiDaoimpl();
+	
+	
 		String glname = request.getParameter("glname");
-		String glpwd= request.getParameter("glpwd");
-		GuanLi user = gl.Login(glname, glpwd);
-		
-		if (user != null && user.getGlpwd().equals(glpwd)) { //µÇÂ¼³É¹¦
-System.out.println("µÇÂ¼³É¹¦");
-			request.getRequestDispatcher("/HouTai/Frame.jsp").forward(request, response);
-		
-			return;
+		String pwd = request.getParameter("glpwd");
+		String pwd1 = request.getParameter("glpwd1");
+
+		if (pwd.equals(pwd1)) {
+			GuanLiDao ud = new GuanLiDaoimpl();
+			if (ud.insertGuanLi(glname, pwd)) {
+				System.out.print("×¢²á³É¹¦£¡");
+				request.getRequestDispatcher("/HouTai/Login.jsp").forward(request, response);
+			} else {
+				System.out.print("ÓÃ»§ÃûÒÑ´æÔÚ£¡");
+			}
+
+		} else {
+			System.out.print("ÃÜÂë²»Ò»ÖÂ£¡");
 		}
-		//µÇÂ¼Ê§°Ü
-		System.out.println("µÇÂ¼Ê§°Ü,Çë×¢²á");
-		response.sendRedirect("/HuaWeiS/HouTai/Login1.jsp");
-	}
-	
-	
+		
 	}
 
-
+}

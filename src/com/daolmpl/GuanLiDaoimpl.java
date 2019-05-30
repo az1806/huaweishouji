@@ -17,6 +17,7 @@ import com.util.GongJuClass;
 
 
 
+
 public class GuanLiDaoimpl implements GuanLiDao {
 
 	@Override
@@ -42,4 +43,14 @@ public class GuanLiDaoimpl implements GuanLiDao {
 
 			return null;
 		}
+
+	@Override
+	public boolean insertGuanLi(String glname, String glpwd) {
+		int n = GongJuClass.updateSQL("insert htglydb (htuser,htpassword)  values ('"
+				+ glname + "','" + glpwd + "')");
+		if (n>0) {
+			return true;
+		}
+		return false;
 }
+	}
