@@ -2,7 +2,9 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+ int n= Integer.parseInt(request.getParameter("n"));
+ 
+ %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
@@ -24,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <%
                    List<ShangPin> pts=(List<ShangPin>) request.getAttribute("spname");%>
                   <%for (int i=0;i<pts.size();i++) {  %> <li class="on"><a
-					href="/HuaWeiS/CanShuo?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
+					href="/HuaWeiS/ShangPin?n=<%=pts.get(i).getXid()%>"> <%=pts.get(i).getName() %>
 						<%} %> 
 						</a>
 				</li>
@@ -42,22 +44,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </header>
         
         <main>
-        <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("svname");%>
+        <%   List<ShangPinLei> pa=(List<ShangPinLei>) request.getAttribute("saname");%>
         
+     
             <div class="pro-right-left">
                 
 				
-                        <div class="pro-details-img"><img src="<%= ps.get(0).getSrca()%>" />
+                        <div class="pro-details-img"><img src="<%= pa.get(n-1).getSrca()%>" />
                 </div>
-					
+					   
                 <div class="pro-detalis-carousel">
                     <div class="am-slider am-slider-default am-slider-carousel" data-am-flexslider="{itemWidth: 112, itemMargin: 4,move:5,  controlNav: false ,  slideshow: true}">
                         <ul class="am-slides pro-details">
-                        <%for (int s=0;s<ps.size();s++) {  %>
-                <li><img src="<%= ps.get(s).getSrca()%>"/>
-                
-                </li>
-						<%} %> 
+                 
+                <li><img src="<%=pa.get(n-1).getSrca()%>"/>
+              
                             
                         </ul>
                     </div>
@@ -76,10 +77,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                
                 
                
-                    <li><%= ps.get(0).getSname()%></li>
-                    <li><%= ps.get(0).getColor()%></li>
-                    <li><%= ps.get(0).getJiage()%></li>
-                    <li><%= ps.get(0).getJiage()%></li>
+                    <li><%= pa.get(n-1).getSname()%></li>
+                    <li><%= pa.get(n-1).getColor()%></li>
+                    <li><%= pa.get(n-1).getJiage()%></li>
+                    <li><%= pa.get(n-1).getJiage()%></li>
                 </ul>
               
                 </div>
@@ -96,31 +97,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div class="am-tab-panel am-active" id="tab1">
                         <ul>
                             <li>
-                                <span class="pro-tabs-constant">品牌:</span>
-                                <span class="pro-tabs-variable">XXX</span>
-                            </li>
-                            <li>
-                                <span class="pro-tabs-constant">是否组装:</span>
-                                <span class="pro-tabs-variable">NO</span>
-                            </li>
-                            <li>
-                                <span class="pro-tabs-constant">是否可定制:</span>
-                                <span class="pro-tabs-variable">yes</span>
-                            </li>
-                            <li>
                                 <span class="pro-tabs-constant">型号:</span>
-                                <span class="pro-tabs-variable">000000</span>
+                                <span class="pro-tabs-variable"><%= pa.get(n-1).getSpxh()%></span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">储存:</span>
+                                <span class="pro-tabs-variable"><%= pa.get(n-1).getSpcc()%></span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">内存:</span>
+                                <span class="pro-tabs-variable"><%= pa.get(n-1).getSpnc()%></span>
+                            </li>
+                            <li>
+                                <span class="pro-tabs-constant">处理器:</span>
+                                <span class="pro-tabs-variable"><%= pa.get(n-1).getSpclq()%></span>
                             </li>
                             <li>
                                 <span class="pro-tabs-constant">颜色分类:</span>
-                                <span class="pro-tabs-variable">卡其</span>
+                                <span class="pro-tabs-variable"><%= pa.get(n-1).getColor()%></span>
                             </li>
                             <li>
                                 <span class="pro-tabs-constant">设计元素:</span>
                                 <span class="pro-tabs-variable">大师设计</span>
                             </li> <li>
                             <span class="pro-tabs-constant">风格:</span>
-                            <span class="pro-tabs-variable">日式</span>
+                            <span class="pro-tabs-variable">中式</span>
                         </li>
                             <li>
                                 <span class="pro-tabs-constant">款式定位:</span>

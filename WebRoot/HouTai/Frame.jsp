@@ -36,14 +36,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <![endif]-->
 		<script type="text/javascript" src="layui/layui.js"></script>
 		<!-- 滚动条插件 -->
-		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
+		<link rel="stylesheet" type="text/css" href="HouTai/css/jquery.mCustomScrollbar.css">
 		<script src="framework/jquery-ui-1.10.4.min.js"></script>
 		<script src="framework/jquery.mousewheel.min.js"></script>
 		<script src="framework/jquery.mCustomScrollbar.min.js"></script>
 		<script src="framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
 		<!-- 公共样式 结束 -->
 		
-		<link rel="stylesheet" type="text/css" href="css/frameStyle.css">
+		<link rel="stylesheet" type="text/css" href="HouTai/css/frameStyle.css">
 		<script type="text/javascript" src="framework/frame.js" ></script>
 		
 	</head>

@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      
           
             
-           <%  for (int i=0;i<ps.size();i++) {  %><li > <a href="/HuaWeiS/CanShuo?n=<%=ps.get(i).getXid()%>">
+           <%  for (int i=0;i<ps.size();i++) {  %><li > <a href="/HuaWeiS/CanShuo?n=<%=ps.get(i).getSid()%>">
                     <div class="img-box">
                         <img src="<%=ps.get(i).getSrc() %>">
                         <p><%= ps.get(i).getSname()%></p>

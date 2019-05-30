@@ -32,19 +32,19 @@ public class CanShuoServlet extends HttpServlet {
 			throws ServletException, IOException {
 		 request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
-		ShangPinDao ptd = new ShangPinDaoimpl();
-		List<ShangPin> pts= ptd.queryShangPins();
-		
+		 ShangPInLeiDao pw = new ShangPInLeiDaoimpl();
+			List<ShangPinLei> pa= pw.queryShangPinLeisa();
+			
 		int n;
 		
-		if(request.getParameter("n")==null){
-			n=pts.get(0).getXid();
-		}else{
+		if(request.getParameter("n")!=null){
 			n=Integer.parseInt(request.getParameter("n"));
 		}
-		ShangPInLeiDao po = new ShangPInLeiDaoimpl();
-		List<ShangPinLei> ps= po.queryShangPinLeis(n);
-		request.setAttribute("svname", ps);
+		
+		ShangPinDao ptd = new ShangPinDaoimpl();
+		List<ShangPin> pts= ptd.queryShangPins();
+		request.setAttribute("saname", pa);
+		
 		request.setAttribute("spname", pts);
 		request.getRequestDispatcher("/ShangPinLei.jsp").forward(request, response);
 	}

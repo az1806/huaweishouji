@@ -41,15 +41,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <p></p>
             <span>产品展示</span>
         </header>
-            <%   List<ShangPinLei> pns=(List<ShangPinLei>) request.getAttribute("same");%>
+            <%   List<ShangPinLei> ps=(List<ShangPinLei>) request.getAttribute("same");%>
         <ul> 
      
           
             
-           <%  for (int i=0;i<pns.size();i++) {  %><li > <a href="/HuaWeiS/CanShuo?n=<%=pns.get(i).getXid()%>">
+           <%  for (int i=0;i<ps.size();i++) {  %><li > <a href="/HuaWeiS/CanShuo?n=<%=ps.get(i).getSid()%>">
                     <div class="img-box">
-                        <img src="<%=pns.get(i).getSrc() %>">
-                        <p><%= pns.get(i).getSname()%></p>
+                        <img src="<%=ps.get(i).getSrc() %>">
+                        <p><%= ps.get(i).getSname()%></p>
                     </div>
                 </a></li>
 						<%} %> 
