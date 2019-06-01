@@ -245,7 +245,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li class="limenuitem">
 					<i class="icon-cog menuicon"></i>系统菜单<b class="arrow icon-angle-down arrow-down"></b>
 					<ul class="ulleftsubitems">
-						<a href="product.html" target="right">
+					<a href="/HuaWeiS/SpLb" target="right">
+							<li>产品类管理</li>
+						</a>
+						<a href="/HuaWeiS/Sp" target="right">
 							<li>产品管理</li>
 						</a>
 						<a href="newsType.html" target="right">
@@ -268,7 +271,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 			</ul>
 			<div style="position: absolute; left: 191px; right: 20px; ">
-				<iframe src="product.html" scrolling="no"  width="100%" height="1200" name="right" border="none"></iframe>
+				<iframe src="HouTai/product.html" scrolling="no"  width="100%" height="1200" name="right" border="none"></iframe>
 			</div>
 		</div>
 		<script src="HouTai/js/jquery-1.7.2.min.js" type="text/javascript"></script>

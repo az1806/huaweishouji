@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		String glpwd= request.getParameter("glpwd");
 		GuanLi user = gDao.Login(glname, glpwd);
 		if (user != null && user.getGlpwd().equals(glpwd)) { //µÇÂ¼³É¹¦
-			request.getRequestDispatcher("/frame.html").forward(request, response);
+			request.getRequestDispatcher("HouTai/Frame.jsp").forward(request, response);
 		
 			return;
 		}

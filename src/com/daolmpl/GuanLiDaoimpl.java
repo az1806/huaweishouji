@@ -49,8 +49,10 @@ public class GuanLiDaoimpl implements GuanLiDao {
 		int n = GongJuClass.updateSQL("insert htglydb (htuser,htpassword)  values ('"
 				+ glname + "','" + glpwd + "')");
 		if (n>0) {
+			System.out.print("添加成功");
 			return true;
 		}
+		System.out.print("添加失败");
 		return false;
 }
 	}

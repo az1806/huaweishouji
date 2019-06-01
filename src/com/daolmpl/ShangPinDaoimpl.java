@@ -28,6 +28,7 @@ public class ShangPinDaoimpl implements ShangPinDao{
 
 				pt.setXid(rs.getInt(1));
 				pt.setName(rs.getString(2));
+				pt.setSrc(rs.getString(3));
 				pts.add(pt);
 			}
 
@@ -38,9 +39,15 @@ public class ShangPinDaoimpl implements ShangPinDao{
 		return pts;
 	}
 
+	public int insertShangPin(String Spname) {
+		return	 GongJuClass.updateSQL("insert into huaweidb.splbdb(splbname)value('"+Spname+"') ;");
+		
+}
 
-
-	
+	@Override
+	public int Shanchu(int splbid) {
+		return GongJuClass.updateSQL("delete from splbdb where splbid='"+  splbid+"'" );
+		
 	}
 
-
+}

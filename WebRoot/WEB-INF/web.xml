@@ -108,6 +108,41 @@
     <servlet-name>ZhuCeServlet</servlet-name>
     <servlet-class>com.Servlet.Admin.ZhuCeServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SpLbServlet</servlet-name>
+    <servlet-class>com.Servlet.Admin.SpLbServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SpLbsServlet</servlet-name>
+    <servlet-class>com.Servlet.Admin.SpLbsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SpServlet</servlet-name>
+    <servlet-class>com.Servlet.Admin.SpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SpsServlet</servlet-name>
+    <servlet-class>com.Servlet.Admin.SpsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>XiuGaiServlet</servlet-name>
+    <servlet-class>com.Servlet.Admin.XiuGaiServlet</servlet-class>
+  </servlet>
+
+
+
+
+
 
 
 
@@ -185,6 +220,26 @@
   <servlet-mapping>
     <servlet-name>ZhuCeServlet</servlet-name>
     <url-pattern>/ZhuCe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpLbServlet</servlet-name>
+    <url-pattern>/SpLb</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpLbsServlet</servlet-name>
+    <url-pattern>/SpLbs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpServlet</servlet-name>
+    <url-pattern>/Sp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpsServlet</servlet-name>
+    <url-pattern>/Sps</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XiuGaiServlet</servlet-name>
+    <url-pattern>/XiuGai</url-pattern>
   </servlet-mapping>
   
 

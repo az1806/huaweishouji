@@ -96,6 +96,26 @@ public  class ShangPInLeiDaoimpl implements ShangPInLeiDao {
 		}
 		return pns;
 	}
+
+	@Override
+	public int insertShangPins(String Spname, String color, String spxh,
+			String spcc, int xid) {
+		return	 GongJuClass.updateSQL("insert into huaweidb.spdb(spname,spcolor,spxinghao,spchucun,splbid)values('"+Spname+"','"+color+"','"+spxh+"','"+spcc+"','"+xid+"') ;");
+	
+	}
+
+	@Override
+	public int Shanchu(int sid) {
+		// TODO Auto-generated method stub
+		return GongJuClass.updateSQL("delete from spdb where spid='"+  sid+"'" );
+	}
+
+	@Override
+	public int XiuGai( int sid,String Spname, String color, String spxh, String spcc,
+			int xid) {
+		// TODO Auto-generated method stub
+		return GongJuClass.updateSQL("update spdb set spname='"+Spname+"',spcolor='"+color+"',spxinghao='"+spxh+"',spchucun='"+spcc+"',splbid='"+xid+"'where spid='"+  sid+"'" );
+	}
 	}
 
 	
