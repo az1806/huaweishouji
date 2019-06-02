@@ -29,9 +29,14 @@ public class XiuGaiServlet extends HttpServlet {
 			throws ServletException, IOException {
 		 request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
+		 
+		 request.setCharacterEncoding("utf-8");
+		 response.setCharacterEncoding("utf-8");
+		 int n=Integer.parseInt(request.getParameter("n"));
 		 ShangPInLeiDao pw = new ShangPInLeiDaoimpl();
 			List<ShangPinLei> pa= pw.queryShangPinLeisa();
 			request.setAttribute("saname", pa);
+		
 			request.getRequestDispatcher("/HouTai/GoodsAddsX.jsp").forward(request, response);
 	}
 

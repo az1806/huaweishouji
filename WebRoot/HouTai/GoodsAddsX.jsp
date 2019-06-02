@@ -1,7 +1,9 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTf-8"%>
+<%@ page language="java" import="java.util.*,com.entitly.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+ int n=Integer.parseInt(request.getParameter("n"));
+	 
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -24,17 +26,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
 
       <hr>
- 
+<% List<ShangPinLei> pa=(List<ShangPinLei>)request.getAttribute("saname");%>
       <form  action="/HuaWeiS/Sps" method="post" class="am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-margin gallery-list">
   
         
             <img class="am-img-thumbnail am-img-bdrs" src="images/lps.jpg" alt="">
             <div class="gallery-title"><h1>华为为你共享</h1></div>
-          <div class="con" onclick="getFocus(this)">	
-								商品编号：	<input type="text" name="sid"  placeholder="请输商品颜色" autocomplete="off" class="layui-input"></div>
             <div class="con" onclick="getFocus(this)">
-
-				商品名：	<input type="text" name="spname"  placeholder="请输商品名" autocomplete="off" class="layui-input"></div>
+            商品id：<input type="text" name="n"  placeholder="请输商品名" autocomplete="off" class="layui-input" value="<%=pa.get(n-1).getSid() %>"> </div>
+			     <div class="con" onclick="getFocus(this)">	商品名：	<input type="text" name="spname"  placeholder="请输商品名" autocomplete="off" class="layui-input"></div>
 					<div class="con" onclick="getFocus(this)">	
 								商品颜色：	<input type="text" name="color"  placeholder="请输商品颜色" autocomplete="off" class="layui-input"></div>
 							<div class="con" onclick="getFocus(this)">
@@ -46,12 +46,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
         
             <div class="gallery-title"><input type="submit" value="修改" /></div>
-       
+         
    
        
          
       </form>
-     
 
     
     </div>

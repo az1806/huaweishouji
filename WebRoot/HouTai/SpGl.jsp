@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <hr>
 <div class="but">
 <a href="HouTai/GoodsAdds.jsp"><input type="submit"  class="layui-btn"  value="添加"></a>
-<a href="HouTai/GoodsAddsX.jsp"><input type="submit"  class="layui-btn"  value="修改">	</a>
+	</a>
 						</div>
       <ul class="am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-margin gallery-list">
       <% for(int v=0;v<pa.size();v++ ){ %>
@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="gallery-title"><%=pa.get(v).getSname() %></div>
            <div>  <a href=" /HuaWeiS/Sps?sid=<%=pa.get(v).getSid() %>"><input type="submit"  class="layui-btn"  value="删除">
 						</a>
-					
+					<a href="/HuaWeiS/XiuGai?n=<%=pa.get(v).getSid() %>"><input type="submit"  class="layui-btn"  value="修改">
 						</div>
           </a>
         </li><%} %>

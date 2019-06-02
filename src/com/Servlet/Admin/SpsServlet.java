@@ -69,7 +69,7 @@ public class SpsServlet extends HttpServlet {
 		 
 		 PrintWriter out = response.getWriter();
 		 ShangPInLeiDao spsv = new ShangPInLeiDaoimpl();
-		int sid=Integer.parseInt(request.getParameter("sid"));
+		int sid=Integer.parseInt(request.getParameter("n"));
 		 String Spname=request.getParameter("spname");
 		 String color=request.getParameter("color");
 		 String spxh=request.getParameter("spxh");
