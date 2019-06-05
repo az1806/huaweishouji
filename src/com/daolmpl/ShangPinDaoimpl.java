@@ -46,7 +46,7 @@ public class ShangPinDaoimpl implements ShangPinDao{
 
 	@Override
 	public int Shanchu(int splbid) {
-		return GongJuClass.updateSQL("delete from splbdb where splbid='"+  splbid+"'" );
+		return GongJuClass.updateSQL("delete from splbdb where splbid="+  splbid);
 		
 	}
 

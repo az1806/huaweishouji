@@ -107,14 +107,14 @@ public  class ShangPInLeiDaoimpl implements ShangPInLeiDao {
 	@Override
 	public int Shanchu(int sid) {
 		// TODO Auto-generated method stub
-		return GongJuClass.updateSQL("delete from spdb where spid='"+  sid+"'" );
+		return GongJuClass.updateSQL("delete from spdb where spid="+  sid);
 	}
 
 	@Override
 	public int XiuGai( int sid,String Spname, String color, String spxh, String spcc,
 			int xid) {
 		// TODO Auto-generated method stub
-		return GongJuClass.updateSQL("update spdb set spname='"+Spname+"',spcolor='"+color+"',spxinghao='"+spxh+"',spchucun='"+spcc+"',splbid='"+xid+"'where spid='"+ sid +"'" );
+		return GongJuClass.updateSQL("update spdb set spname='"+Spname+"',spcolor='"+color+"',spxinghao='"+spxh+"',spchucun='"+spcc+"',splbid='"+xid+"'where spid="+ sid  );
 	}
 	}
 
