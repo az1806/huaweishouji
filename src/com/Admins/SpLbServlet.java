@@ -41,26 +41,7 @@ public class SpLbServlet extends  HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
-		request.setCharacterEncoding("utf-8");
-		 response.setCharacterEncoding("utf-8");
-		 
-		 PrintWriter out = response.getWriter();
-		 ShangPinDao spname = new ShangPinDaoimpl();
-		 String sp=request.getParameter("spname");
-		 int s=spname.insertShangPin(sp);
-		 if(s>0){
-			 String sps=Result.toClient(true,"添加成功");
-			 out.println(sps);
-		 }else{
-			 String sps=Result.toClient(true,"添加失败");
-			 out.println(sps);
-		 }
-			ShangPinDao ptd = new ShangPinDaoimpl();
-			List<ShangPin> pts= ptd.queryShangPins();
-			request.setAttribute("spname", pts);
-
-			request.getRequestDispatcher("/Admin/Splb.jsp").forward(request, response);
+	
 				
 			
 	}

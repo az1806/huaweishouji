@@ -97,12 +97,7 @@ public  class ShangPInLeiDaoimpl implements ShangPInLeiDao {
 		return pns;
 	}
 
-	@Override
-	public int insertShangPins(String Spname, String color, String spxh,
-			String spcc, int xid) {
-		return	 GongJuClass.updateSQL("insert into huaweidb.spdb(spname,spcolor,spxinghao,spchucun,splbid)values('"+Spname+"','"+color+"','"+spxh+"','"+spcc+"','"+xid+"') ;");
 	
-	}
 
 	@Override
 	public int Shanchu(int sid) {
@@ -110,13 +105,81 @@ public  class ShangPInLeiDaoimpl implements ShangPInLeiDao {
 		return GongJuClass.updateSQL("delete from spdb where spid="+  sid);
 	}
 
+	
 	@Override
-	public int XiuGai( int sid,String Spname, String color, String spxh, String spcc,
-			int xid) {
+	public List<ShangPinLei> ShangPinLeis(int sid) {
+		List<ShangPinLei> pvs = new ArrayList<ShangPinLei>();
+		ResultSet rs = GongJuClass.querySQL("select * from spdb where spid= "+sid);
+		try {
+			while (rs.next()) {
+				ShangPinLei pv = new ShangPinLei();
+
+				pv.setSid(rs.getInt(1));
+				pv.setSname(rs.getString(2));
+				pv.setColor(rs.getString(3));
+				pv.setSpxh(rs.getString(4));
+				pv.setSpcc(rs.getString(5));
+				pv.setSpnc(rs.getString(6));
+				pv.setSpclq(rs.getString(7));
+				pv.setJiage(rs.getString(8));
+				pv.setXid(rs.getInt(9));
+				pv.setSrc(rs.getString(10));
+				pv.setSrca(rs.getString(11));
+				pvs.add(pv);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return pvs;
+	}
+
+	@Override
+	public ShangPinLei ShangPinLeisa(int spid) {
 		// TODO Auto-generated method stub
-		return GongJuClass.updateSQL("update spdb set spname='"+Spname+"',spcolor='"+color+"',spxinghao='"+spxh+"',spchucun='"+spcc+"',splbid='"+xid+"'where spid="+ sid  );
+	ShangPinLei psvs = new ShangPinLei();
+	ResultSet rs = GongJuClass.querySQL("select * from spdb where spid= "+spid);
+	try {
+		while (rs.next()) {
+			ShangPinLei pv = new ShangPinLei();
+
+			pv.setSid(rs.getInt(1));
+			pv.setSname(rs.getString(2));
+			pv.setColor(rs.getString(3));
+			pv.setSpxh(rs.getString(4));
+			pv.setSpcc(rs.getString(5));
+			pv.setSpnc(rs.getString(6));
+			pv.setSpclq(rs.getString(7));
+			pv.setJiage(rs.getString(8));
+			pv.setXid(rs.getInt(9));
+			pv.setSrc(rs.getString(10));
+			pv.setSrca(rs.getString(11));
+			psvs=pv;
+		}
+
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+	return psvs;
 	}
+
+	@Override
+	public int insertShangPins( String Spname, String color,String spxh, String spcc, String spnc, String spclq, String jiage,int xid, String src, String srca) {
+		return	 GongJuClass.updateSQL("insert into huaweidb.spdb(spname,spcolor,spxinghao,spchucun,spneicun,spchuliqi,spjiage,splbid,spsrc,Spsrca)values('"+Spname+"','"+color+"','"+spxh+"','"+spcc+"','"+spnc+"','"+spclq+"','"+jiage+"','"+xid+"','"+src+"','"+srca+"') ;");
+	}
+
+	@Override
+	public int XiuGai(int spid, String spname, String color, String spxh,
+			String spcc, String spnc, String spclq, String jiage, int xid,
+			String src, String srca){ 
+		// TODO Auto-generated method stub
+		return GongJuClass.updateSQL("update huaweidb.spdb set spname='"+spname+"',spcolor='"+color+"',spxinghao='"+spxh+"',spchucun='"+spcc+"',spneicun='"+spnc+"',spchuliqi='"+spclq+"',spjiage='"+jiage+"',splbid='"+xid+"',spsrc='"+src+"',Spsrca='"+srca+"'where spid="+ spid  );
+	}
+
+	}
+	
 
 	
 	

@@ -55,28 +55,4 @@ public class SpServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setCharacterEncoding("utf-8");
-		 response.setCharacterEncoding("utf-8");
-		 
-		 PrintWriter out = response.getWriter();
-		 ShangPInLeiDao spsv = new ShangPInLeiDaoimpl();
-		 String Spname=request.getParameter("spname");
-		 String color=request.getParameter("color");
-		 String spxh=request.getParameter("spxh");
-		 String spcc=request.getParameter("spcc");
-		    int xid=Integer.parseInt(request.getParameter("xid"));
-		 int s=spsv.insertShangPins(Spname, color, spxh, spcc, xid);
-		 if(s>0){
-			 String sps=Result.toClient(true,"添加成功");
-			 out.println(sps);
-		 }else{
-			 String sps=Result.toClient(true,"添加失败");
-			 out.println(sps);
-		 }
-		 ShangPInLeiDao pw = new ShangPInLeiDaoimpl();
-		 List<ShangPinLei> pa= pw.queryShangPinLeisa();
-			request.setAttribute("saname", pa);
-			request.getRequestDispatcher("/Admin/SpGl.jsp").forward(request, response);
-	}
-
-}
+}}

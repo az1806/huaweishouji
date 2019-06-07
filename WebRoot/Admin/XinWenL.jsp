@@ -16,8 +16,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="Admin/css/amazeui.min.css" />
-		<link rel="stylesheet" href="Admin/css/admin.css" />
+		<link rel="stylesheet" href="/HuaWeiS/Admin/css/amazeui.min.css" />
+		<link rel="stylesheet" href="/HuaWeiS/Admin/css/admin.css" />
 	</head>
 
 	<body>

@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="product-list">
           <%   List<ShangPinLei> pa=(List<ShangPinLei>) request.getAttribute("saname");%>
             <div class="am-u-sm-6 am-u-md-6 am-u-lg-4">
-                <a href="/HuaWeis/CanShuo?n=<%=pa.get(0).getXid()%>">
+                <a href="/HuaWeis/ShangPin?n=<%=pa.get(0).getXid()%>">
                     <img src="<%=pa.get(0).getSrc() %>" />
                 </a>
             </div>

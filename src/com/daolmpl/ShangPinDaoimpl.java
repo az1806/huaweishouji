@@ -50,4 +50,31 @@ public class ShangPinDaoimpl implements ShangPinDao{
 		
 	}
 
+	@Override
+	public ShangPin ShangPins(int splbid) {
+		ShangPin	 ptvs = new ShangPin();
+		ResultSet rs = GongJuClass.querySQL("SELECT * FROM huaweidb.splbdb where splbid="+splbid);
+		try {
+			while (rs.next()) {
+				ShangPin pt = new ShangPin();
+
+				pt.setXid(rs.getInt(1));
+				pt.setName(rs.getString(2));
+				pt.setSrc(rs.getString(3));
+				ptvs=pt;
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ptvs;
+	}
+
+	@Override
+	public int XiuShangPin(int splbid,String splbname) {
+		return GongJuClass.updateSQL("update huaweidb.splbdb  set splbname='"+splbname+"'  where splbid="+splbid  );
+	}
+
+	
 }

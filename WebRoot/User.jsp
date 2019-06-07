@@ -56,20 +56,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <p >设计团队</p>
             <span>DESIGN TEAM</span>
         </div>
+        <ul>
          <%  
           List<User> us=(List<User>) request.getAttribute("username");
         
          for(int i=0;i<us.size();i++) {
         %>
-         <div class="about-team-headimg">
+       <li>  <div class="about-team-headimg">
         <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-            <img src="<%=us.get(i).getYgphoto() %>" alt="">
+            <img src="<%=us.get(i).getYgphoto() %>" >
             <span><%=us.get(i).getYgname() %><span>
             
         </div>
-        </div>
+        </div></li>
         <%} %>
-        
+        </ul>
        <div class="about-slogan">
             <div>
             <p></p>

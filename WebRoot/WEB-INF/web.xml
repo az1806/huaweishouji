@@ -151,6 +151,8 @@
   <servlet-name>XinWenServlet</servlet-name>
   <servlet-class>com.Admins.XinWenServlet</servlet-class>
  </servlet>
+ 
+
  <servlet-mapping>
   <servlet-name>message</servlet-name>
   <url-pattern>/message</url-pattern>
@@ -243,6 +245,7 @@
   <servlet-name>XinWenServlet</servlet-name>
   <url-pattern>/Admin/XinWen</url-pattern>
  </servlet-mapping>
+  
  <welcome-file-list>
   <welcome-file>GongSi</welcome-file>
  </welcome-file-list>

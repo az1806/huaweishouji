@@ -23,8 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
-<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+
 <script src="lib/amazeui/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 <script type="text/javascript" src="lib/handlebars/handlebars.min.js"></script>
@@ -45,8 +44,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <span>www.huaweixin.com</span>
             </div>
             <div class="search-box div-inline">
-                <div class="input-box"><input type="text" name="" placeholder="             请输入关键字"></div>
-                <div class="search-botton"></div>
+            <form action="/HuaWeiS/ChaXun" method="get" >
+              <div class="input-box">  <input type="text" name="sr" placeholder="             请输入关键字"></div>
+                 <div class="search-botton"><input type="submit"  value="搜索"></div>
+                </form>
             </div>
         </div>
     </div>
