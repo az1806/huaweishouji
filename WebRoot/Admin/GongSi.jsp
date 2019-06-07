@@ -1,50 +1,67 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*,com.entitly.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+List<GongSi> gs=(List<GongSi>)request.getAttribute("gsname");
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="css/amazeui.min.css" />
-		<link rel="stylesheet" href="css/admin.css" />
+		<link rel="stylesheet" href="/HuaWeiS/Admin/css/amazeui.min.css" />
+		<link rel="stylesheet" href="/HuaWeiS/Admin/css/admin.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" type="text/css"></link>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script type="text/javascript" src="/HuaWeiS/Admin/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	var updateFrame=null;
+	function updateBut(e){
+	var typeid=e.getAttribute("data-id");
+	alert(typeid);
+	layui.use('layer',function(){
+	var layer=layui.layer;
+	updateFrame=layer.open({
+	title:"公司信息修改",
+	type:2,
+	area:['45%','40%'],
+	scrollbar:false,
+	content:'/HuaWeiS/Admin/Chanpin?method=lGS&gsid='+typeid, 
+	
+	});
+	});
+	}
+	
+	
+	</script>
 	</head>
 
 	<body>
 		<div class="admin-content-body">
 			<div class="am-cf am-padding am-padding-bottom-0">
-				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">友情链接</strong><small></small></div>
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">公司信息管理</strong><small></small></div>
 			</div>
 
 			<hr>
 
 			<div class="am-g">
-				<div class="am-u-sm-12 am-u-md-6">
-					<div class="am-btn-toolbar">
-						<div class="am-btn-group am-btn-group-xs">
-							<button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
-						</div>
-					</div>
-				</div>
+				
+				
 				<div class="am-u-sm-12 am-u-md-3">
-
-				</div>
-				<div class="am-u-sm-12 am-u-md-3">
-					<div class="am-input-group am-input-group-sm">
-						<input type="text" class="am-form-field">
-						<span class="am-input-group-btn">
-            <button class="am-btn am-btn-default" type="button">搜索</button>
-          </span>
-					</div>
+					
 				</div>
 			</div>
 			<div class="am-g">
 				<div class="am-u-sm-12">
 				
 					<form class="am-form">
-						<table class="am-table am-table-striped am-table-hover table-main">
+						<table class="am-table am-table-striped am-table-hover table-main" border="1" align="center">
 						 <%for(int i=0;i<gs.size();i++) {%>
 							<thead>
 								<tr>
-								<th class="table-id">公司编号</th>
+							
 								<th  class="table-title">公司名字</th>
 								<th class="table-title">公司简介</th>
 								<th class="table-title">公司电话</th>
@@ -56,7 +73,7 @@
 							</thead>
 							<tbody>
 								<tr>
-								<td><%=gs.get(i).getGsid() %></td>
+							
                           <td><%=gs.get(i).getGsname() %></td>
                           <td><%=gs.get(i).getJianjie() %></td>
                          <td><%=gs.get(i).getGsphone() %></td>
@@ -74,7 +91,6 @@
 								
 						</table>
 						<div class="am-cf">
-							共 15 条记录
 							<div class="am-fr">
 								<ul class="am-pagination">
 									<li class="am-disabled">

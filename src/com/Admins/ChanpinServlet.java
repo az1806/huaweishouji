@@ -9,17 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.GongSiDao;
 import com.dao.ShangPInLeiDao;
 import com.dao.ShangPinDao;
+import com.daolmpl.GongSiDaoimpl;
 import com.daolmpl.ShangPInLeiDaoimpl;
 import com.daolmpl.ShangPinDaoimpl;
+import com.entitly.GongSi;
 import com.entitly.ShangPin;
 import com.entitly.ShangPinLei;
 import com.util.Result;
 
 public class ChanpinServlet extends BaseServlet {
 	ShangPinDao ptd = new ShangPinDaoimpl();
-
+	GongSiDao hws = new GongSiDaoimpl();
 	
 	 ShangPInLeiDao pw = new ShangPInLeiDaoimpl();
 	public void Come(HttpServletRequest request, HttpServletResponse response)
@@ -206,6 +209,56 @@ public class ChanpinServlet extends BaseServlet {
 			
 
 				
+		}
+		public void GongSi(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			request.setCharacterEncoding("utf-8");
+			 response.setCharacterEncoding("utf-8");
+		
+			List<GongSi> gs=hws.queryGongSis();
+			request.setAttribute("gsname", gs);
+			request.getRequestDispatcher("/Admin/GongSi.jsp").forward(request, response);
+			
+		}	
+		
+		public void lGS(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			 request.setCharacterEncoding("utf-8");
+			 response.setCharacterEncoding("utf-8");
+			 int gsid=Integer.parseInt(request.getParameter("gsid"));
+			GongSi gsv=hws.GongSis(gsid);
+			request.setAttribute("gvsname", gsv);
+			request.getRequestDispatcher("/Admin/GongSiX.jsp").forward(request, response);
+			
+		}	
+		public void GSXiu(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			request.setCharacterEncoding("utf-8");
+			 response.setCharacterEncoding("utf-8");
+				PrintWriter out = response.getWriter();
+				 int gsid=Integer.parseInt(request.getParameter("gsid"));
+				 String gsname=request.getParameter("gsname");
+				 String jianjie=request.getParameter("jianjie");
+				 String gsphone=request.getParameter("gsphone");
+				 String gsemail=request.getParameter("gsemail"); 
+				 String gsdz=request.getParameter("gsdz");
+				 int s=hws.GongSis(gsid, gsname, jianjie, gsphone, gsemail, gsdz);
+				 if(s>0){
+					 
+					 System.out.println("修改成功");
+						
+						out.println("<script>window.parent.location.reload();</script>");
+					
+				 }
+				
+				 
+		else{
+					 System.out.println("修改失败");
+					 
+				 }
+			
+
+			
 		}
 		}
 		

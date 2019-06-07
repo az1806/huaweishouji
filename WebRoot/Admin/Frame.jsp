@@ -257,8 +257,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<a href="/HuaWeiS/Admin/XinWen?method=allXinWen" target="right">
 							<li>资讯管理</li>
 						</a>
-						<a href="Admin/link.html" target="right">
-							<li>友情链接</li>
+						<a href="/HuaWeiS/Admin/Chanpin?method=GongSi" target="right">
+							<li>公司信息管理</li>
 						</a>
 						<a href="message.html" target="right">
 							<li>用户留言管理</li>
