@@ -34,23 +34,16 @@ public class ShangPinServlet extends HttpServlet {
 		 response.setCharacterEncoding("utf-8");
 		ShangPinDao ptd = new ShangPinDaoimpl();
 		List<ShangPin> pts= ptd.queryShangPins();
-		
 		int n;
-		
-		
 		if(request.getParameter("n")==null){
 			n=pts.get(0).getXid();
 		}else{
 			n=Integer.parseInt(request.getParameter("n"));
 		}
-		
-			
-			
 			ShangPInLeiDao po = new ShangPInLeiDaoimpl();
 			List<ShangPinLei> ps= po.queryShangPinLeis(n);
 			request.setAttribute("svname", ps);
 			request.setAttribute("spname", pts);
-
 			request.getRequestDispatcher("/ShangPin.jsp").forward(request, response);
 		}
 	

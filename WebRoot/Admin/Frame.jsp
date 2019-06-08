@@ -263,8 +263,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<a href="message.html" target="right">
 							<li>用户留言管理</li>
 						</a>
-						<a href="user.html" target="right">
-							<li>用户管理</li>
+						<a href="/HuaWeiS/Admin/UserS?method=User" target="right">
+							<li>员工管理</li>
 						</a>
 						<a href="updatePwd.html" target="right"><li >修改密码</li></a>
 					</ul>
