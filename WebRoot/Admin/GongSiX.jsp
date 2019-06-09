@@ -25,7 +25,7 @@ var gsphone=document.getElementById("gsp").value;
 var gsemail=document.getElementById("gse").value;
 var gsdz=document.getElementById("gsd").value;
 
-if(gsname!=""&&jianjie!=""&&gsphone!=""&&gsemail!=""&&gsdz!=""){
+if(gsname!=""&&jianjie!=""&&gsphone!=""&&gsemail!=""&&gsdz!=""&&gsid!=""){
  window.location.href="/HuaWeiS/Admin/Chanpin?method=GSXiu&gsid="+<%=gsv.getGsid()%>+"&gsname="+gsname+"&jianjie="+jianjie+"&gsphone="+gsphone+"&gsemail="+gsemail+"&gsdz="+gsdz;
 }
 }

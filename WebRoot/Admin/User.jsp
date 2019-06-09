@@ -1,4 +1,4 @@
-<%@page import="com.entitly.UserHouTai"%>
+
 <%@ page language="java" import="java.util.*,com.entitly.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -13,6 +13,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<title></title>
 		<link rel="stylesheet" href="css/amazeui.min.css" />
 		<link rel="stylesheet" href="css/admin.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" type="text/css"></link>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script type="text/javascript" src="/HuaWeiS/Admin/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	var updateFrame=null;
+	function updateBut(e){
+	var typeid=e.getAttribute("data-id");
+	alert(typeid);
+	layui.use('layer',function(){
+	var layer=layui.layer;
+	updateFrame=layer.open({
+	title:"员工信息修改",
+	type:2,
+	area:['45%','40%'],
+	scrollbar:false,
+	content:'/HuaWeiS/Admin/UserS?method=ShowUser&ygid='+typeid, 
+	
+	});
+	});
+	}
+	
+	
+	</script>
 	</head>
 
 	<body>
@@ -56,6 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<th class="table-type">手机号</th>
 									<th class="table-type">照片</th>
 									<th class="table-set">操作</th>
+									<th class="table-set">操作</th>
 								</tr>
 							</thead>
 						<% for ( int i=0;i<us.size();i++){ %>
@@ -69,46 +93,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<td class="am-hide-sm-only"><%=us.get(i).getYgsex() %></td>
 									<td> <%=us.get(i).getYgphone() %></td>
 									<td> <%=us.get(i).getYgphoto() %></td>
-									<td>
-										<div class="am-btn-toolbar">
-											<div class="am-btn-group am-btn-group-xs">
-												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-												<a href="/HuaWeiS/Admin/UserS?method=ShanChu&ygid=<%=us.get(i).getYgid() %>"><button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button></a>
-											</div>
-										</div>
-									</td>
+								
+										
+											<td>	<button type="button" class="am-btn am-btn-default" data-id="<%=us.get(i).getYgid()%>" onclick="updateBut(this)"><span class="am-icon-trash-o">修改</span> </button></td>
+										<td>		<a href="/HuaWeiS/Admin/UserS?method=ShanUser&ygid=<%=us.get(i).getYgid()%>"><button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o">删除</span> </button></a></td>
+									
 								</tr>
-								<% }%>
-							</tbody>
 							
+							</tbody>
+								<% }%>
+						</table>
 						
-						<div class="am-cf">
-							共 15 条记录
-							<div class="am-fr">
-								<ul class="am-pagination">
-									<li class="am-disabled">
-										<a href="#">«</a>
-									</li>
-									<li class="am-active">
-										<a href="#">1</a>
-									</li>
-									<li>
-										<a href="#">2</a>
-									</li>
-									<li>
-										<a href="#">3</a>
-									</li>
-									<li>
-										<a href="#">4</a>
-									</li>
-									<li>
-										<a href="#">5</a>
-									</li>
-									<li>
-										<a href="#">»</a>
-									</li>
-								</ul>
-							</div>
 						</div>
 						<hr>
 					</form>

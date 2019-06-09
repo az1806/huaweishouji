@@ -23,12 +23,21 @@ public class UserSServlet extends BaseServlet {
 		 request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
 		
-		List<UserHouTai> us= ptd.queryUsers();
+		List<UserHouTai> us= ptd.queryUsersa();
 		request.setAttribute("ygname", us);
   
 		request.getRequestDispatcher("/Admin/User.jsp").forward(request, response); 
 	}
-
+	
+	public void ShowUser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		 request.setCharacterEncoding("utf-8");
+		 response.setCharacterEncoding("utf-8");
+			int ygid=Integer.parseInt(request.getParameter("ygid"));
+		 UserHouTai use =ptd.Users(ygid);
+		 request.setAttribute("yname", use);
+		 request.getRequestDispatcher("/Admin/UserX.jsp").forward(request, response); 
+	}
 	
 	 
 	public void Adds(HttpServletRequest request, HttpServletResponse response)
@@ -47,7 +56,7 @@ public class UserSServlet extends BaseServlet {
 		 int s=ptd.TianjiaUser(ygname, ygphone, ygsex, ygphoto);
 		 
 		 if(s>0){ System.out.println("³É¹¦");
-		 List<UserHouTai> us= ptd.queryUsers();
+		 List<UserHouTai> us= ptd.queryUsersa();
 			request.setAttribute("ygname", us);
 	  
 			request.getRequestDispatcher("/Admin/User.jsp").forward(request, response); 
@@ -59,19 +68,18 @@ public class UserSServlet extends BaseServlet {
 	}
 
 	
-	public void ShanChu(HttpServletRequest request, HttpServletResponse response)
+	public void ShanUser(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
-		 int ygid=Integer.parseInt(request.getParameter("ygid"));
-
-		 int v=ptd.Shanchu(ygid);
-		 if(v>0){
+		int ygid=Integer.parseInt(request.getParameter("ygid"));
+		int e=ptd.Shan(ygid);
+		 if(e>0){
 			 System.out.print("É¾³ý");
-			 List<UserHouTai> us= ptd.queryUsers();
+			 List<UserHouTai> us= ptd.queryUsersa();
 				request.setAttribute("ygname", us);
 		  
-				request.getRequestDispatcher("/Admin/User.jsp").forward(request, response); 
+				request.getRequestDispatcher("/Admin/User.jsp").forward(request, response);
 		 }
 		 else{
 			System.out.print("É¾³ýÊ§°Ü");
@@ -79,5 +87,30 @@ public class UserSServlet extends BaseServlet {
 				
 		 }
 		 }
-	
+	public void USXiu(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		 response.setCharacterEncoding("utf-8");
+			PrintWriter out = response.getWriter();
+			 int ygid=Integer.parseInt(request.getParameter("ygid"));
+			 String ygname=request.getParameter("ygname");
+			 String ygsex=request.getParameter("ygsex");
+			 String ygphone=request.getParameter("ygphone");
+			 String ygphoto=request.getParameter("ygphoto"); 
+			
+			 int s=ptd.XiuUser(ygid, ygname, ygphone, ygsex, ygphoto);
+			 if(s>0){
+				 
+				 System.out.println("ÐÞ¸Ä³É¹¦");
+					
+					out.println("<script>window.parent.location.reload();</script>");
+				
+			 }
+			
+			 
+	else{
+				 System.out.println("ÐÞ¸ÄÊ§°Ü");
+				 
+			 }
+	}
 }

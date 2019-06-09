@@ -8,16 +8,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
  <head>
     <title>华为企业官网</title>
-    ﻿<meta charset="UTF-8">
+    ﻿   ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link rel="alternate icon" type="image/png" href="images/favicon.png">
-<link rel='icon' href='favicon.ico' type='image/x-ico' />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
 <link rel="stylesheet" href="css/default.min.css?t=227" />
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
@@ -34,17 +30,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 <header>
-    <div class="header-top">
+  <div class="header-top">
         <div class="width-center">
-            <div class="header-logo ">
-            <img src="images/huawei.jpg" alt="" />
-            </div>
+            <div class="header-logo "><img src="images/HuaWei.jsp" alt=""></div>
             <div class="header-title div-inline">
-                <strong>华为公司</strong>
+                <strong>华为有限公司</strong>
                 <span>www.huaweixin.com</span>
             </div>
+
             <div class="search-box div-inline">
-            <form action="/HuaWeiS/ChaXun" method="get" >
+              <form action="/HuaWeiS/ChaXun" method="get" >
               <div class="input-box">  <input type="text" name="sr" placeholder="             请输入关键字"></div>
                  <div class="search-botton"><input type="submit"  value="搜索"></div>
                 </form>

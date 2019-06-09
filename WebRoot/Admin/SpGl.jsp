@@ -2,7 +2,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-	List<ShangPinLei> pa=(List<ShangPinLei>)  request.getAttribute("saname");
+List<ShangPinLei> pa=(List<ShangPinLei>)  request.getAttribute("saname");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
