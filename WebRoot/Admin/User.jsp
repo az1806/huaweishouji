@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div class="am-btn-toolbar">
 											<div class="am-btn-group am-btn-group-xs">
 												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-												<a href="/HuaWeiS/Admin/UserS?method=ShanChu&ygid=<%=us.get(i).getYgid() %>"><button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+												<a href="/HuaWeiS/Admin/UserS?method=ShanChu&ygid=<%=us.get(i).getYgid() %>"><button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button></a>
 											</div>
 										</div>
 									</td>

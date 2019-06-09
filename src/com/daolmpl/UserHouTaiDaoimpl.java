@@ -61,6 +61,6 @@ public class UserHouTaiDaoimpl implements UserHouTaiDao{
 	@Override
 	public int TianjiaUser(String ygname, String ygphone, String ygsex,
 			String ygphoto) {
-		return	 GongJuClass.updateSQL("insert into huaweidb.ygdb(ygname,ygsex,ygphone,ygphoto)values('"+ygname+"','"+ygsex+"','"+ygphone+"','"+ygphoto+"') ;");
+		return	 GongJuClass.updateSQL("insert into huaweidb.ygdb(ygname,ygphone,ygsex,ygphoto)values('"+ygname+"','"+ygphone+"','"+ygsex+"','"+ygphoto+"') ;");
 	}
 }

@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        var ygphoto=document.getElementById("k").value;
        
        if(ygname !=""&&ygsex!=""&&ygphone!=""&&ygphoto!="" ){
- window.location.href="/HuaWeiS/Admin/UserS?method=Add&ygname="+ygname+"&ygsex="+ygsex+"&ygphone="+ygphone+"&ygphoto="+ygphoto;
+ window.location.href="/HuaWeiS/Admin/UserS?method=Adds&ygname="+ygname+"&ygsex="+ygsex+"&ygphone="+ygphone+"&ygphoto="+ygphoto;
 }
        
   }
@@ -65,8 +65,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						    <tr>  <td>	          员工名字：<input type="text" name="ygname"   class="layui-input" id="l" ></td></tr>
 							<tr>  <td>	          员工性别:<input type="text" name="ygsex"   class="layui-input" id="m" ></td></tr>
 							<tr>  <td>	          联系方式:<input type="text" name="ygphone"   class="layui-input" id="o" ></td></tr>
-							<tr>  <td>	          员工照片:<input type="text" name="ygsex"   class="layui-input" id="k" ></td></tr>
-							<tr>  <td>	  <div class="con" >  <button type="button" class="am-btn am-btn-default" onclick="Adds()"><span class="am-icon-plus">添加</span> </button>  <div class="con" >  </td></tr>	
+							<tr>  <td>	          员工照片:<input type="text" name="ygphoto"   class="layui-input" id="k" ></td></tr>
+							<tr>  <td>	  <div class="con" >  <button type="button" class="am-btn am-btn-default" onclick="Adds()"><span class="am-icon-plus">添加</span> </button>    </td></tr>	
 						</table>
 						
 					</form>

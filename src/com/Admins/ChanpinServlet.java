@@ -18,6 +18,8 @@ import com.daolmpl.ShangPinDaoimpl;
 import com.entitly.GongSi;
 import com.entitly.ShangPin;
 import com.entitly.ShangPinLei;
+import com.jspsmart.upload.SmartUpload;
+import com.jspsmart.upload.SmartUploadException;
 import com.util.Result;
 
 public class ChanpinServlet extends BaseServlet {
@@ -257,9 +259,25 @@ public class ChanpinServlet extends BaseServlet {
 					 
 				 }
 			
-
+		}
+		public void saveImg(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			PrintWriter out = response.getWriter();
+			SmartUpload smart=new SmartUpload();
+			smart.setCharset("UTF-8");
+			smart.initialize(getServletConfig(), request, response);
+			try {
+				smart.upload();
+				smart.save("/upload");
+				String fileName=smart.getFiles().getFile(0).getFieldName();
+				out.println(Result.toClient(true, fileName));
+			} catch (SmartUploadException e) {
+				out.println(Result.toClient(false, "ÉÏ´«Ê§°Ü"));
+				e.printStackTrace();
+			}
 			
 		}
+		
 		}
 		
 		

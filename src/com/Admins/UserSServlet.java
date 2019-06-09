@@ -31,15 +31,16 @@ public class UserSServlet extends BaseServlet {
 
 	
 	 
-	public void Add(HttpServletRequest request, HttpServletResponse response)
+	public void Adds(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		 request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
 
 		 
 		 String ygname=request.getParameter("ygname");
-		 String ygsex=request.getParameter("ygsex");
 		 String ygphone=request.getParameter("ygphone");
+		 String ygsex=request.getParameter("ygsex");
+		
 		
 		 String ygphoto=request.getParameter("ygphoto");
 		
@@ -62,9 +63,6 @@ public class UserSServlet extends BaseServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
-		 
-	
-		
 		 int ygid=Integer.parseInt(request.getParameter("ygid"));
 
 		 int v=ptd.Shanchu(ygid);
