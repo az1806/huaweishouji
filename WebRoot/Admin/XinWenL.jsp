@@ -4,20 +4,50 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<%
 	List<XinWenL> xx =(List<XinWenL>)request.getAttribute("xx");
-			%>
+%>
+
 			
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
-  <head>
+  
+
     <head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/HuaWeiS/Admin/css/amazeui.min.css" />
-		<link rel="stylesheet" href="/HuaWeiS/Admin/css/admin.css" />
+		<link rel="stylesheet" href="css/amazeui.min.css" />
+		<link rel="stylesheet" href="css/admin.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" type="text/css"></link>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script type="text/javascript" src="/HuaWeiS/Admin/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	var updateFrame=null;
+	function updateBut(e){
+	var typeid=e.getAttribute("data-id");
+	alert(typeid);
+	layui.use('layer',function(){
+	var layer=layui.layer;
+	updateFrame=layer.open({
+	title:"员工信息修改",
+	type:2,
+	area:['45%','40%'],
+	scrollbar:false,
+	content:'/HuaWeiS/Admin/XinWenL?method=getXWLid&id='+typeid, 
+	
+	});
+	});
+	}
+	function addXinWenL(){
+	var xwname =document.getElementById("xwname").value;
+		if(xwname!=" "){
+			window.location.href="/HuaWeiS/Admin/XinWenL?method=addXinWenL&xwname="+xwname;//跳转页面（重定向）
+		}
+		
+	}
+	
+	</script>
+	
 	</head>
 
 	<body>
@@ -33,9 +63,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="am-u-sm-12 am-u-md-6">
 					<div class="am-btn-toolbar">
 						<div class="am-btn-group am-btn-group-xs" >
+				<form class="am-form">
+						<table class="am-table am-table-striped am-table-hover table-main">
+							
+						    <tr>  <td>	<input type="text" name="xwname"  id="xwname"  ></td>
+							<td>	<button type="button" onclick="addXinWenL()" class="am-btn am-btn-default" ><span class="am-icon-plus"></span> 新增</button></td></tr>
+							
+						</table>
 						
-							<input type="text" name="xwname"  id="xwname"  >
-							<button type="submit" onclick="addXinWenL()" class="am-btn am-btn-default" ><span class="am-icon-plus"></span> 新增</button>
+					</form>
 						</div>
 					</div>
 				</div>
@@ -51,16 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 			</div>
-			<script type="text/javascript">
-	function addXinWenL(){
-	var xwname =document.getElementById("xwname").value;
-		if(xwname!=" "){
-			window.location.href="XinWenL?method=addXinWenL&xwname="+xwname;//跳转页面（重定向）
-		}
-		
-	}
 	
-</script>
 			<div class="am-g">
 				<div class="am-u-sm-12">
 					<form class="am-form">
@@ -86,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<td>
 										<div class="am-btn-toolbar">
 											<div class="am-btn-group am-btn-group-xs">
-												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+													<button type="button" class="am-btn am-btn-default" data-id="<%=xx.get(i).getXwid()%>" onclick="updateBut(this)"><span class="am-icon-trash-o">修改</span> </button>
 												<a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="XinWenL?method=deleteXinWenL&id=<%=xx.get(i).getXwid() %>"><span class="am-icon-trash-o"></span> 删除</a>
 											</div>
 										</div>

@@ -34,17 +34,43 @@ public class XinWenLDaoImpl implements XinWenLDao {
 
 	@Override
 	public int addXinWenL(String xwname) {
-		int n=GongJuClass.updateSQL("insert into xwdb (xwname) value('"+xwname+"')");
-		return n;
+		return GongJuClass.updateSQL("insert into huaweidb.xwdb (xwname) value('"+xwname+"');");
+		
 	}
 
 	@Override
 	public int deleteXinWenL(int id) {
-		int n= GongJuClass.updateSQL("delete from xwdb where xwid="+id+";");
+		int n= GongJuClass.updateSQL("delete from xwdb where xwid="+id);
 		return n;
+	}
+
+	@Override
+	public XinWenL getXWLid(int id) {
+		XinWenL xwl = new XinWenL();
+		ResultSet rs = GongJuClass.querySQL("select * from xwdb ;");
+		try {
+			while (rs.next()) {
+				
+				xwl.setXwid(rs.getInt(1));
+				xwl.setXwname(rs.getString(2));
+				
+			}
+			return xwl;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	
+	}
+
+	@Override
+	public int updateXWL(int id, String name) {
+		return GongJuClass.updateSQL("update xwdb set xwname='"+name+"' where xwid=" + id);
+	}
+		
 	}
 	
 	
 	
 	
-}

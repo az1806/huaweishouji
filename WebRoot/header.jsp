@@ -27,12 +27,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="lib/amazeui/amazeui.min.js"></script>
 <script type="text/javascript" src="lib/raty/jquery.raty.js"></script>
 <script type="text/javascript" src="js/main.min.js?t=1"></script>
+
+<style type="text/css">
+#s{
+width: 500px;
+}
+
+
+</style>
 </head>
 <body>
 <header>
-  <div class="header-top">
+  <div class="header-top"  >
         <div class="width-center">
-            <div class="header-logo "><img src="images/HuaWei.jsp" alt=""></div>
+            <div class="header-logo "><img src="images/x.jpg" alt=""></div>
             <div class="header-title div-inline">
                 <strong>华为有限公司</strong>
                 <span>www.huaweixin.com</span>

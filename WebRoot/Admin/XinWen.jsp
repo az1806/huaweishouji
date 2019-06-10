@@ -3,6 +3,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+List<XinWen> ww =(List<XinWen>)request.getAttribute("ww"); 
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -10,8 +11,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/HuaWeiS/Admin/css/amazeui.min.css" />
-		<link rel="stylesheet" href="/HuaWeiS/Admin/css/admin.css" />
+		<link rel="stylesheet" href="css/amazeui.min.css" />
+		<link rel="stylesheet" href="css/admin.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" type="text/css"></link>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script type="text/javascript" src="/HuaWeiS/Admin/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	var updateFrame=null;
+	function updateBut(e){
+	var typeid=e.getAttribute("data-id");
+	alert(typeid);
+	layui.use('layer',function(){
+	var layer=layui.layer;
+	updateFrame=layer.open({
+	title:"员工信息修改",
+	type:2,
+	area:['45%','40%'],
+	scrollbar:false,
+	content:'/HuaWeiS/Admin/XinWen?method=getXWid&id='+typeid, 
+	
+	});
+	});
+	}
+						
+	function addXinWen(){
+	var zxname =document.getElementById("zxname").value;
+	var zxneirong =document.getElementById("zxneirong").value;
+	var zxtime =document.getElementById("zxtime").value;
+	var xwid =document.getElementById("xwid").value;
+	
+		if(zxname!=" "&&zxneirong!=" " &&zxtime!=" "&&xwid!=" "){
+			window.location.href="/HuaWeiS/Admin/XinWen?method=addXinWen&zxname="+zxname+"&zxneirong="+zxneirong+"&zxtime="+zxtime+"&xwid="+xwid;//跳转页面（重定向）
+		}
+		
+	}
+	
+	</script>
+		
 	</head>
 
 	<body>
@@ -25,6 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="am-g">
 				<div class="am-u-sm-12 am-u-md-6">
 					<div class="am-btn-toolbar">
+					<form >
 						<div class="am-btn-group am-btn-group-xs">
 							添加名称
 							<input type="text" name="zxname"  id="zxname"  ></br>
@@ -36,23 +73,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<input type="text" name="xwid"  id="xwid"  ></br>
 							
 							<button type="button" class="am-btn am-btn-default" onclick="addXinWen()"><span class="am-icon-plus"></span> 新增</button>
+							</form>
 						</div>
 					</div>
 				</div>
-							<script type="text/javascript">
-	function addXinWen(){
-	var zxname =document.getElementById("zxname").value;
-	var zxneirong =document.getElementById("zxneirong").value;
-	var zxtime =document.getElementById("zxtime").value;
-	var xwid =document.getElementById("xwid").value;
-	
-		if(zxname!=" "||zxneirong!=" " ||zxtime!=" "||xwid!=" "){
-			window.location.href="XinWen?method=addXinWen&zxname="+zxname+"&zxneirong="+zxneirong+"&zxntime="+zxtime+"&xwid="+xwid;//跳转页面（重定向）
-		}
-		
-	}
-	
-</script>
+			
 				<div class="am-u-sm-12 am-u-md-3">
 
 				</div>
@@ -80,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<th class="table-set">操作</th>
 								</tr>
 							</thead>
-							<% List<XinWen> ww =(List<XinWen>)request.getAttribute("ww"); %>
+						
 				<%    for(int i=0;i<ww.size();i++){   %>
 							<tbody>
 								<tr>
@@ -96,7 +121,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<td>
 										<div class="am-btn-toolbar">
 											<div class="am-btn-group am-btn-group-xs">
-												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+													<button type="button" class="am-btn am-btn-default" data-id="<%=ww.get(i).getZxid()%>" onclick="updateBut(this)"><span class="am-icon-trash-o">修改</span> </button>
 												<a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"href="XinWen?method=deleteXinWen&id=<%=ww.get(i).getZxid() %>"><span class="am-icon-trash-o"></span> 删除</a>
 											</div>
 										</div>

@@ -28,4 +28,17 @@ public interface XinWenDao {
 	 * @return
 	 */
 	int deleteXinWen(int id);
+	/**
+	 * 根据新闻分类id查询信息
+	 * @param id
+	 * @return
+	 */
+	XinWen getXWid(int id);
+	/**
+	 * 修改新闻分类
+	 * @param id
+	 * @param name
+	 * @return
+	 */
+	int updateXWid(int id,String name,String neirong,String time,int lid);
 }

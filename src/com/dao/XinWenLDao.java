@@ -2,6 +2,7 @@ package com.dao;
 
 import java.util.List;
 
+import com.entitly.XinWen;
 import com.entitly.XinWenL;
 
 
@@ -26,4 +27,17 @@ public interface XinWenLDao {
 	 * @return
 	 */
 	int deleteXinWenL(int id);
+	/**
+	 * 根据新闻类别分类id查询信息
+	 * @param id
+	 * @return
+	 */
+	XinWenL getXWLid(int id);
+	/**
+	 * 修改新闻类的内容
+	 * @param id	新闻类的id
+	 * @param name 新闻类的名称
+	 * @return
+	 */
+	int updateXWL(int id,String name);
 }
