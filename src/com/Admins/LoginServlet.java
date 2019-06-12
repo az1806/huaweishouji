@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dao.GuanLiDao;
 import com.daolmpl.GuanLiDaoimpl;
@@ -28,24 +29,8 @@ public class LoginServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		System.out.println("µÇÂ¼");
-		request.setCharacterEncoding("utf-8");
-		 response.setCharacterEncoding("utf-8");
-		
-		GuanLiDao gDao = new 	GuanLiDaoimpl();
-		String glname = request.getParameter("glname");
-		String glpwd= request.getParameter("glpwd");
-		GuanLi user = gDao.Login(glname, glpwd);
-		if (user != null && user.getGlpwd().equals(glpwd)) { //µÇÂ¼³É¹¦
-			request.getRequestDispatcher("Admin/Frame.jsp").forward(request, response);
-			//response.sendRedirect("Admin/Frame.jsp");
-			return;
-		}
-		//µÇÂ¼Ê§°Ü
-		response.sendRedirect("/HuaWeiS/Admin/Login1.jsp");
+		doPost(request, response);
 	}
-
 	
 		
 	
@@ -82,14 +67,17 @@ public class LoginServlet extends HttpServlet {
 		GuanLiDao gDao = new 	GuanLiDaoimpl();
 		String glname = request.getParameter("glname");
 		String glpwd= request.getParameter("glpwd");
-		GuanLi user = gDao.Login(glname, glpwd);
-		if (user != null && user.getGlpwd().equals(glpwd)) { //µÇÂ¼³É¹¦
-			request.getRequestDispatcher("Admin/Frame.jsp").forward(request, response);
-		
-			return;
+		GuanLi guanli = gDao.Login(glname, glpwd);
+		if (guanli != null) { //µÇÂ¼³É¹¦
+			//request.getRequestDispatcher("/Admin/Frame.jsp").forward(request, response);
+			HttpSession session=request.getSession();
+			session.setAttribute("guanli", guanli);
+			System.out.print("µÇÂ¼");
+			response.sendRedirect("/HuaWeiS/Admin/Frame.jsp");
+			
 		}
-		//µÇÂ¼Ê§°Ü
-		response.sendRedirect("/HuaWeiS/Admin/Login.jsp");
-	}}
+		}
+
+	}
 
 

@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dao.ShangPInLeiDao;
+import com.dao.ShangPinDao;
 
 import com.daolmpl.ShangPInLeiDaoimpl;
 import com.daolmpl.ShangPinDaoimpl;
 
+import com.entitly.ShangPin;
 import com.entitly.ShangPinLei;
 import com.util.Result;
 
@@ -36,9 +38,13 @@ public class SpServlet extends HttpServlet {
 
 		 request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
+		 ShangPinDao ptd = new ShangPinDaoimpl();
+			List<ShangPin> pts= ptd.queryShangPins();
+			request.setAttribute("spname", pts);
+
 		 ShangPInLeiDao pw = new ShangPInLeiDaoimpl();
-			List<ShangPinLei> pa= pw.queryShangPinLeisa();
-			request.setAttribute("saname", pa);
+			List<ShangPinLei> pas= pw.queryShangPinLeisa();
+			request.setAttribute("safname", pas);
 			request.getRequestDispatcher("/Admin/SpGl.jsp").forward(request, response);
 	}
 

@@ -10,20 +10,42 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dao.XinWenDao;
+import com.dao.XinWenLDao;
 import com.daolmpl.XinWenDaoImpl;
+import com.daolmpl.XinWenLDaoImpl;
+import com.entitly.ShangPinLei;
 import com.entitly.XinWen;
 import com.entitly.XinWenL;
 
 public class XinWenServlet extends BaseServlet {
 
-	
+	XinWenLDao xxx=new XinWenLDaoImpl();
 	XinWenDao www=new XinWenDaoImpl();
 	public void allXinWen(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		 request.setCharacterEncoding("utf-8");
 		 response.setCharacterEncoding("utf-8");
-		List<XinWen> ww= www.allXinWen();
-		 request.setAttribute("ww", ww);
+		 List<XinWenL> xx= xxx.allXinWenL();
+	
+		 String   name= 	request.getParameter("name");
+		 
+		 String neirong=request.getParameter("neirong");
+		 String time=request.getParameter("time");
+		 
+		 String lidws=request.getParameter("lid");
+		 int lid=0;
+			if(lidws !=null && !lidws.equals("")){
+				lid=Integer.parseInt(request.getParameter("lid"));
+			}	 
+
+			 
+		List<XinWen> S=www.allXinWens(name, neirong, time, lid);
+if(S!=null){
+			System.out.println(S);
+			List<XinWen> ww= S;
+			 request.setAttribute("ww", ww);
+}
+         request.setAttribute("xx", xx);
 		 request.getRequestDispatcher("/Admin/XinWen.jsp").forward(request, response);
 	
 	}

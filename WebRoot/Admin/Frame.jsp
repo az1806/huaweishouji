@@ -10,10 +10,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<head>
 		<meta charset="utf-8" />
 		<title>网站管理系统后台</title>
-		<link href="Admin/css/Site.css" rel="stylesheet" type="text/css" />
-		<link href="Admin/css/zy.layout.css" rel="stylesheet" />
-		<link href="Admin/css/zy.form.css" rel="stylesheet" />
-		<link href="Admin/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="/HuaWeiS/Admin/css/Site.css" rel="stylesheet" type="text/css" />
+		<link href="/HuaWeiS/Admin/css/zy.layout.css" rel="stylesheet" />
+		<link href="/HuaWeiS/Admin/css/zy.form.css" rel="stylesheet" />
+		<link href="/HuaWeiS/Admin/css/font-awesome.min.css" rel="stylesheet" />
 		<style type="text/css">
 			a{
 				text-decoration: none;
@@ -215,7 +215,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				border: none;
 			}
 		</style>
-		<link href="Admin/css/zy.menu.css" rel="stylesheet" />
+		<link href="/HuaWeiS/Admin/css/zy.menu.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -260,7 +260,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<a href="/HuaWeiS/Admin/Chanpin?method=GongSi" target="right">
 							<li>公司信息管理</li>
 						</a>
-						<a href="message.html" target="right">
+						<a href="/HuaWeiS/Admin/LiuYan?method=allLiuYan" target="right">
 							<li>用户留言管理</li>
 						</a>
 						<a href="/HuaWeiS/Admin/UserS?method=User" target="right">
@@ -271,12 +271,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 			</ul>
 			<div style="position: absolute; left: 191px; right: 20px; ">
-				<iframe src="Admin/HouTai.jsp" scrolling="no"  width="100%" height="1200" name="right" border="none"></iframe>
+				<iframe src="/HuaWeiS/Admin/HouTai.jsp" scrolling="no"  width="100%" height="1200" name="right" border="none"></iframe>
 			</div>
 		</div>
-		<script src="Admin/js/jquery-1.7.2.min.js" type="text/javascript"></script>
-		<script src="Admin/js/plugs/Jqueryplugs.js" type="text/javascript"></script>
-		<script src="Admin/js/_layout.js"></script>
+		<script src="/HuaWeiS/Admin/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script src="/HuaWeiS/Admin/js/plugs/Jqueryplugs.js" type="text/javascript"></script>
+	
 
 		
 

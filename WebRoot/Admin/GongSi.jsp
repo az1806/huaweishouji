@@ -46,13 +46,7 @@ List<GongSi> gs=(List<GongSi>)request.getAttribute("gsname");
 
 			<hr>
 
-			<div class="am-g">
-				
-				
-				<div class="am-u-sm-12 am-u-md-3">
-					
-				</div>
-			</div>
+		
 			<div class="am-g">
 				<div class="am-u-sm-12">
 				
@@ -111,23 +105,7 @@ List<GongSi> gs=(List<GongSi>)request.getAttribute("gsname");
 
 			</div>
 		</div>
-		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-		<script type="text/javascript" src="myplugs/js/plugs.js"></script>
-		<script>
-			$( function(){
-				$(".btnedit").click(function() {
-
-							$.jq_Panel({
-								title: "修改链接",
-								iframeWidth: 500,
-								iframeHeight: 300,
-								url: "editLink.html"
-							});
-						});
-						
-				
-			})
-		</script>
+		
 
 	</body>
 

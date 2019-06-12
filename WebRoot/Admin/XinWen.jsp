@@ -1,9 +1,10 @@
-<%@page import="com.entitly.XinWen"%>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+<%@ page language="java" import="java.util.*,com.entitly.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 List<XinWen> ww =(List<XinWen>)request.getAttribute("ww"); 
+List<XinWenL> xx=(List<XinWenL>)request.getAttribute("xx"); 
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -45,7 +46,18 @@ List<XinWen> ww =(List<XinWen>)request.getAttribute("ww");
 		}
 		
 	}
-	
+	function addXinWen(){
+
+var name=$("#name").val();
+var neirong=$("#neirong").val();
+var time=$("#time").val();
+var lid=$("select option:selected").val();
+if(lid==""){
+lid=null;
+}
+ window.location.href="/HuaWeiS/Admin/XinWen?method=allXinWen&name="+name+"&neirong="+neirong+"&time="+time+"&lid="+lid;
+
+}
 	</script>
 		
 	</head>
@@ -77,19 +89,33 @@ List<XinWen> ww =(List<XinWen>)request.getAttribute("ww");
 						</div>
 					</div>
 				</div>
-			
-				<div class="am-u-sm-12 am-u-md-3">
-
-				</div>
-				<div class="am-u-sm-12 am-u-md-3">
-					<div class="am-input-group am-input-group-sm">
-						<input type="text" class="am-form-field">
-						<span class="am-input-group-btn">
-            <button class="am-btn am-btn-default" type="button">搜索</button>
-          </span>
-					</div>
-				</div>
-			</div>
+			<from>
+				
+						<table border="1">
+				<tr>	
+					<td >新闻:<input type="text" class="am-form-field" name="name" id="name" ></td>
+					<td >新闻内容<input type="text" class="am-form-field" name="neirong" id="neirong"  ></td>
+					<td >新闻时间：	<input type="text" class="am-form-field" name="time" id="time" ></td>
+					
+					<td >
+					<select>
+					<option value="0">请选择</option>
+					
+						<%for( int  i=0;i<xx.size();i++) {%>
+						
+						<option value="<%=xx.get(i).getXwid() %>" ><%=xx.get(i).getXwname() %>
+						</option>
+					
+					
+						<%} %>
+					</select></td>
+					
+						<td><span class="am-input-group-btn">
+            <button class="am-btn am-btn-default"  type="button"  onclick="addXinWen()">搜索</button>
+          </span></td>
+       </tr></table>
+			</div></form>	
+    
 			<div class="am-g">
 				<div class="am-u-sm-12">
 					<form class="am-form">

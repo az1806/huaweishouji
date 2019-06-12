@@ -132,8 +132,8 @@ public class ChanpinServlet extends BaseServlet {
 			 int s=pw.insertShangPins(Spname, color, spxh, spcc,spnc,spclq,jiage,xid,src,srca);
 			 
 			 if(s>0){ System.out.println("成功");
-				 List<ShangPinLei> pa= pw.queryShangPinLeisa();
-					request.setAttribute("saname", pa);
+			 List<ShangPinLei> pas= pw.queryShangPinLeisa();
+				request.setAttribute("safname", pas);
 					request.getRequestDispatcher("/Admin/SpGl.jsp").forward(request, response);
 			 }else{
 				 System.out.println("不成功");
@@ -150,9 +150,12 @@ public class ChanpinServlet extends BaseServlet {
 			 int v=pw.Shanchu(sid);
 			 if(v>0){
 				 System.out.println("删除成功");
-				 List<ShangPinLei> pa= pw.queryShangPinLeisa();
-					request.setAttribute("saname", pa);
-					request.getRequestDispatcher("/Admin/SpGl.jsp").forward(request, response);
+
+					List<ShangPin> pts= ptd.queryShangPins();
+					request.setAttribute("spname", pts);
+					List<ShangPinLei> pas= pw.queryShangPinLeisa();
+					request.setAttribute("safname", pas);
+						request.getRequestDispatcher("/Admin/SpGl.jsp").forward(request, response);	
 			 }else{
 				System.out.println("删除失败");
 			 }
@@ -268,8 +271,8 @@ public class ChanpinServlet extends BaseServlet {
 			smart.initialize(getServletConfig(), request, response);
 			try {
 				smart.upload();
-				smart.save("/upload");
-				String fileName=smart.getFiles().getFile(0).getFieldName();
+				smart.save("/images");
+				String fileName=smart.getFiles().getFile(0).getFileName();
 				out.println(Result.toClient(true, fileName));
 			} catch (SmartUploadException e) {
 				out.println(Result.toClient(false, "上传失败"));
@@ -278,6 +281,36 @@ public class ChanpinServlet extends BaseServlet {
 			
 		}
 		
+		public void DchaX(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			request.setCharacterEncoding("utf-8");
+			 response.setCharacterEncoding("utf-8");
+			List<ShangPin> pts= ptd.queryShangPins();
+			
+			
+		
+			 String   spname= 	request.getParameter("spname");
+			 
+			 String color=request.getParameter("color");
+			 String spxh=request.getParameter("spxh");
+			 
+			 String xidws=request.getParameter("xid");
+			 int xid=0;
+				if(xidws !=null && !xidws.equals("")){
+					xid=Integer.parseInt(request.getParameter("xid"));
+				}	 
+
+				
+			List<ShangPinLei> S=pw.ShangPinLesa(spname, color, spxh, xid);
+	if(S!=null){
+				System.out.println(S);
+				List<ShangPinLei> pas= S;
+				request.setAttribute("safname", pas);
+	}
+	request.setAttribute("spname", pts);
+	
+		request.getRequestDispatcher("/Admin/SpGl.jsp").forward(request, response);		
+		}
 		}
 		
 		

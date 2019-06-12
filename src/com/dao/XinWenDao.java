@@ -41,4 +41,13 @@ public interface XinWenDao {
 	 * @return
 	 */
 	int updateXWid(int id,String name,String neirong,String time,int lid);
+	/**
+	 * 多种条件查询
+	 * @param name
+	 * @param neirong
+	 * @param time
+	 * @param lid
+	 * @return
+	 */
+	List<XinWen> allXinWens(String name,String neirong,String time,int lid);
 }

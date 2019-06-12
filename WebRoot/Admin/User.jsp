@@ -36,6 +36,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	
 	</script>
+		<style type="text/css">
+	#k{
+	width: 50px;
+	height: 30px;
+	}
+	</style>
 	</head>
 
 	<body>
@@ -92,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</td>
 									<td class="am-hide-sm-only"><%=us.get(i).getYgsex() %></td>
 									<td> <%=us.get(i).getYgphone() %></td>
-									<td> <%=us.get(i).getYgphoto() %></td>
+									<td><img  src="<%=us.get(i).getYgphoto() %>" id="k"> </td>
 								
 										
 											<td>	<button type="button" class="am-btn am-btn-default" data-id="<%=us.get(i).getYgid()%>" onclick="updateBut(this)"><span class="am-icon-trash-o">修改</span> </button></td>

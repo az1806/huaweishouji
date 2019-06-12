@@ -13,6 +13,9 @@ import com.dao.UserHouTaiDao;
 import com.daolmpl.UserHouTaiDaoimpl;
 
 import com.entitly.UserHouTai;
+import com.jspsmart.upload.SmartUpload;
+import com.jspsmart.upload.SmartUploadException;
+import com.util.Result;
 
 public class UserSServlet extends BaseServlet {
 	UserHouTaiDao ptd = new UserHouTaiDaoimpl();
@@ -112,5 +115,22 @@ public class UserSServlet extends BaseServlet {
 				 System.out.println("ÐÞ¸ÄÊ§°Ü");
 				 
 			 }
+	}
+	public void saveImg(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		SmartUpload smart=new SmartUpload();
+		smart.setCharset("UTF-8");
+		smart.initialize(getServletConfig(), request, response);
+		try {
+			smart.upload();
+			smart.save("/images");
+			String fileName=smart.getFiles().getFile(0).getFileName();;
+			out.println(Result.toClient(true, fileName));
+		} catch (SmartUploadException e) {
+			out.println(Result.toClient(false, "ÉÏ´«Ê§°Ü"));
+			e.printStackTrace();
+		}
+		
 	}
 }

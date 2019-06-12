@@ -178,7 +178,56 @@ public  class ShangPInLeiDaoimpl implements ShangPInLeiDao {
 		return GongJuClass.updateSQL("update huaweidb.spdb set spname='"+spname+"',spcolor='"+color+"',spxinghao='"+spxh+"',spchucun='"+spcc+"',spneicun='"+spnc+"',spchuliqi='"+spclq+"',spjiage='"+jiage+"',splbid='"+xid+"',spsrc='"+src+"',Spsrca='"+srca+"'where spid="+ spid  );
 	}
 
+	@Override
+	public List<ShangPinLei> ShangPinLesa(String spname, String color,
+			String spxh, int xid) {
+		String sql="select * from spdb where 1=1";
+		if(spname !=null && !spname.equals("")){
+			sql +=" and spname like '%"+spname+"%'";
+		}
+		if(color !=null && !color.equals("")){
+			sql +=" and spcolor like '%"+color+"%'";
+		}
+		if(spxh !=null && !spxh.equals("")){
+			sql +=" and spxinghao like '%"+spxh+"%'";
+		}
+		if(xid > 0){
+			sql +=" and splbid=" +xid;
+		}
+		
+	System.out.println(sql);
+	List<ShangPinLei> pas = new ArrayList<ShangPinLei>();
+	ResultSet rs = GongJuClass.querySQL(sql);
+
+	
+	try {
+		while (rs.next()) {
+			ShangPinLei pk = new ShangPinLei();
+
+			pk.setSid(rs.getInt(1));
+			pk.setSname(rs.getString(2));
+			pk.setColor(rs.getString(3));
+			pk.setSpxh(rs.getString(4));
+			pk.setSpcc(rs.getString(5));
+			pk.setSpnc(rs.getString(6));
+			pk.setSpclq(rs.getString(7));
+			pk.setJiage(rs.getString(8));
+			pk.setXid(rs.getInt(9));
+			pk.setSrc(rs.getString(10));
+			pk.setSrca(rs.getString(11));
+			pas.add(pk);;
+			
+		}
+
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+	return pas;
+	}
+
+	}
+
 	
 
 	

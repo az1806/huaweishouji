@@ -33,7 +33,7 @@ public class XinWenDaoImpl implements XinWenDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return xinwen;
 	}
 	
 
@@ -78,6 +78,43 @@ public class XinWenDaoImpl implements XinWenDao {
 	@Override
 	public int updateXWid(int id,String name,String neirong,String time,int lid) {
 		return GongJuClass.updateSQL("update xwzxdb set zxname='"+name+"',zxneirong='"+neirong+"',zxtime='"+time+"',xwid='"+lid+"' where zxid=" + id);
+	}
+
+
+	@Override
+	public List<XinWen> allXinWens(String name, String neirong, String time,
+			int lid) {
+		String sql="select * from xwzxdb where 1=1";
+		if(name !=null && !name.equals("")){
+			sql +=" and zxname like '%"+name+"%'";
+		}
+		if(neirong !=null && !neirong.equals("")){
+			sql +=" and zxneirong like '%"+neirong+"%'";
+		}
+		if(time !=null && !time.equals("")){
+			sql +=" and zxtime like '%"+name+"%'";
+		}
+		if(lid >0){
+			sql +=" and xwid="+lid;
+		}
+		List<XinWen> xinwen = new ArrayList<XinWen>();
+		ResultSet rs = GongJuClass.querySQL(sql);
+		try {
+			while (rs.next()) {
+				XinWen xw = new XinWen();
+				xw.setZxid(rs.getInt(1));
+				xw.setZxname(rs.getString(2));
+				xw.setZxneirong(rs.getString(3));
+				xw.setZxtime(rs.getString(4));
+				xw.setXwid(rs.getInt(5));
+				xinwen.add(xw);
+			}
+			return xinwen;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return xinwen;
 	}
 	
 }

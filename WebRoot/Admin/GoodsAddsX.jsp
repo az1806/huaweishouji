@@ -14,8 +14,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta charset="UTF-8">
 		<title></title>
 		 <link rel="stylesheet" href="/HuaWeiS/Admin/css/amazeui.min.css" />
-		  <link rel="stylesheet" href="/css/admin.css" />
-		 
+		  <link rel="stylesheet" href="/HuaWeiS/Admin//css/admin.css" />
+		 <script type="text/javascript" src="/HuaWeiS/Admin/layui/layui.js"></script>
+		<link rel="stylesheet" href="layui/css/layui.css" type="text/css"></link>
 		 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
 function XiuGai(){
@@ -34,6 +35,23 @@ if(spname!=""&&color!=""&&spxh!=""&&spcc!=""&&spnc!=""&&spclq!=""&&jiage!=""&&xi
  window.location.href="/HuaWeiS/Admin/Chanpin?method=XiuGai&spid="+<%=psvs.getSid()%>+"&spname="+spname+"&color="+color+"&spxh="+spxh+"&spcc="+spcc+"&spnc="+spnc+"&spclq="+spclq+"&jiage="+jiage+"&xid="+xid+"&src="+src+"&srca="+srca;
 }
 }
+var layer,upload;
+        $(function (){  //jQuery组件的ready事件，
+            layui.use(['upload','layer'],function(){  //layui中包含了大量的组件，此处指明仅仅加载upload和layer组件
+                upload = layui.upload; //upload指代上传组件
+                layer=layui.layer;  //layer指代各种弹出窗口弹出窗口组件，非常有利于业务的控制，我们项目中可以大量使用
+                upload.render({
+                    elem:'#test1',  //点击哪个按钮时，选择本地文件 
+                        url:'/HuaWeiS/Admin/Chanpin?method=saveImg', //服务器端接收文件数据的地址
+                        done:function(res){ //当服务器端保存成功后回调此方法，已经约定res格式为json
+                            //res对象中到底有哪些属性， 由服务器端控制。    
+                            layer.alert(res.message);  //layer的alert方法，可以呈现1个更好看的弹出框 
+                            $("#s").val("/HuaWiS/images/"+res.message); 
+                             $("#sa").val("/HuaWiS/images/"+res.message); 
+                        }
+                    });
+              });
+        });
 </script>
 		  	
 </head>
@@ -65,6 +83,7 @@ if(spname!=""&&color!=""&&spxh!=""&&spcc!=""&&spnc!=""&&spclq!=""&&jiage!=""&&xi
 				<tr>  <td>			商品类别：	<input type="text" name="xid"  placeholder="请输商品类别" autocomplete="off" class="layui-input" id="xid" value="<%=psvs.getXid()%>"></td></tr>
 				 <tr>  <td>			商品图一：	<input type="text" name="spnc"  placeholder="请输商品图地址" autocomplete="off" class="layui-input" id="s" value="<%=psvs.getSrc()%>"></td></tr>
 				  <tr>  <td>			商品图二：	<input type="text" name="spnca"  placeholder="请输商品图地址" autocomplete="off" class="layui-input" id="sa" value="<%=psvs.getSrca()%>"></td></tr>
+				  <tr>  <td><button type="button" class="layui-btn" id="test1">上传图片</button>  </td></tr>
                     <tr>      <td>	    <button type="button" class="am-btn am-btn-default" onclick="XiuGai()"> 修改</button></td>
    
        
