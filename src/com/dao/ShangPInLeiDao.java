@@ -21,7 +21,7 @@ public interface ShangPInLeiDao {
 	 *  查询商品
 	 * @return
 	 */
-	List<ShangPinLei> queryShangPinLeisa();\
+	List<ShangPinLei> queryShangPinLeisa();
 	/**
 	 * 模糊查询
 	 * @param s
